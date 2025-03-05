@@ -22,4 +22,8 @@ class Book extends Model
     protected $attributes = [
         'book_status' => true,
     ];
+
+    public function wishlists(){
+        return $this->hasMany(Wishlist::class);
+    }
 }
