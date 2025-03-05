@@ -28,4 +28,16 @@ Route::get('/book', function () {
 });
 
 
+
+//book route
+Route::get('/book', function () {
+    return view('book');
+});
+
+// explore route
+Route::get('/explore', function () {
+    return view('explore');
+});
+
+
 require __DIR__.'/auth.php';
