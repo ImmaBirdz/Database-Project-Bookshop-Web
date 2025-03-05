@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WishListController;
+use App\Http\Controllers\CartController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,6 +20,9 @@ Route::middleware('auth')->group(function () {
 
     // Wishlist Routes
     Route::resource('wishlist', WishListController::class);
+
+    // Wishlist Routes
+    Route::resource('cart', CartController::class);
 });
 
 

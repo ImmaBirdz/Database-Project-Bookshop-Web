@@ -25,7 +25,7 @@
                     {{ __('WishList') }}
                 </x-nav-link>
                 
-                <x-nav-link class="mr-9">
+                <x-nav-link :href="route('cart.index')" :active="request()->routeIs('cart.index')" class="mr-9">
                     {{ __('Cart') }}
                 </x-nav-link>
 
