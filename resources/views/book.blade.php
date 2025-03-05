@@ -45,8 +45,8 @@
         <div class="flex justify-between items-center">
             <h2 class="text-2xl font-bold">Books</h2>
             <div>
-                <button class="bg-[#454545] px-4 py-2 rounded mr-2 text-white">My Cart</button>
-                <button class="bg-black px-4 py-2 rounded text-white">Log Out</button>
+                <button class="bg-[#454545] px-4 py-2 rounded mr-2 text-white hover:bg-[#333333]">My Cart</button>
+                <button class="bg-black px-4 py-2 rounded text-white hover:bg-[#333333]">Log Out</button>
             </div>
         </div>
 
@@ -75,8 +75,8 @@
 
             <!-- Right Side: Buttons (Stacked Vertically, Moved Left) -->
             <div class="ml-1 flex flex-col space-y-3">
-                <button class="bg-yellow-400 px-6 py-2 text-black font-semibold rounded">BUY NOW</button>
-                <button class="bg-gray-700 px-6 py-2 rounded text-white">ADD TO CART</button>
+                <button class="bg-yellow-400 px-6 py-2 text-black font-semibold rounded hover:bg-yellow-500">BUY NOW</button>
+                <button class="bg-gray-700 px-6 py-2 rounded text-white hover:bg-gray-600">ADD TO CART</button>
             </div>
 
         </div>
