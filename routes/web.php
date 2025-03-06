@@ -26,6 +26,12 @@ Route::middleware('auth')->group(function () {
 });
 
 
+//browse route
+Route::get('/browse', function () {
+    return view('browse');
+});
+
+
 //book route
 Route::get('/book', function () {
     return view('book');

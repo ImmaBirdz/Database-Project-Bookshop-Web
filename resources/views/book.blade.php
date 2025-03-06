@@ -17,10 +17,10 @@
                     <i class="fas fa-search"></i>
                     <button class="ml-2 text-black bg-transparent border-none">Browse</button>
                 </li>
-                <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
+                <!-- <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                     <i class="fas fa-shopping-cart"></i>
                     <button class="ml-2 text-black bg-transparent border-none">Store</button>
-                </li>
+                </li> -->
             </ul>
             <p class="text-sm font-semibold text-gray-600 mt-4">Library</p>
             <ul class="space-y-2 mt-2">
@@ -44,10 +44,10 @@
  <main class="flex-1 p-6">
         <div class="flex justify-between items-center">
             <h2 class="text-2xl font-bold">Books</h2>
-            <div>
+            <!-- <div>
                 <button class="bg-[#454545] px-4 py-2 rounded mr-2 text-white hover:bg-[#333333]">My Cart</button>
                 <button class="bg-black px-4 py-2 rounded text-white hover:bg-[#333333]">Log Out</button>
-            </div>
+            </div> -->
         </div>
 
         <!-- Book Container (Centered Image) -->
@@ -73,7 +73,7 @@
                 <p class="text-gray-500">info (if have)</p>
             </div>
 
-            <!-- Right Side: Buttons (Stacked Vertically, Moved Left) -->
+            <!-- add to cart & buy now button -->
             <div class="ml-1 flex flex-col space-y-3">
                 <button class="bg-yellow-400 px-6 py-2 text-black font-semibold rounded hover:bg-yellow-500">BUY NOW</button>
                 <button class="bg-gray-700 px-6 py-2 rounded text-white hover:bg-gray-600">ADD TO CART</button>
