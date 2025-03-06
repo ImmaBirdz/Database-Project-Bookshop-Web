@@ -15,18 +15,16 @@
                 </li>
                 <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                     <i class="fas fa-search"></i>
-                    <button class="ml-2 text-black bg-transparent border-none">Browse</button>
+                    <button onclick="window.location.href='http://localhost/browse' " class="ml-2 text-black bg-transparent border-none">Browse</button>
                 </li>
-                <!-- <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
-                    <i class="fas fa-shopping-cart"></i>
-                    <button class="ml-2 text-black bg-transparent border-none">Store</button>
-                </li> -->
+
+
             </ul>
             <p class="text-sm font-semibold text-gray-600 mt-4">Library</p>
             <ul class="space-y-2 mt-2">
                 <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                     <i class="fas fa-list"></i>
-                    <button class="ml-2 text-black bg-transparent border-none">Collections</button>
+                    <button onclick="window.location.href='http://localhost/mycollection'" class="ml-2 text-black bg-transparent border-none">Collections</button>
                 </li>
                 <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                     <i class="fas fa-heart"></i>

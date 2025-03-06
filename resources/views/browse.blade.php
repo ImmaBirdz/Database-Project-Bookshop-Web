@@ -11,7 +11,7 @@
             <ul class="space-y-2 mt-2">
                 <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                     <i class="fas fa-home"></i>
-                    <button class="ml-2 text-black bg-transparent border-none">Home</button>
+                    <button onclick="window.location.href='http://localhost/explore'" class="ml-2 text-black bg-transparent border-none">Home</button>
                 </li>
                 <li class="flex items-center px-3 py-2 rounded-lg bg-gray-100">
                     <i class="fas fa-search"></i>
@@ -26,7 +26,7 @@
             <ul class="space-y-2 mt-2">
                 <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                     <i class="fas fa-list"></i>
-                    <button class="ml-2 text-black bg-transparent border-none">Collections</button>
+                    <button onclick="window.location.href='http://localhost/mycollection'" class="ml-2 text-black bg-transparent border-none">Collections</button>
                 </li>
                 <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                     <i class="fas fa-heart"></i>
