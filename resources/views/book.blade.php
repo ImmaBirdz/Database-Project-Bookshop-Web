@@ -75,8 +75,8 @@
 
             <!-- add to cart & buy now button -->
             <div class="ml-1 flex flex-col space-y-3">
-                <button class="bg-yellow-400 px-6 py-2 text-black font-semibold rounded hover:bg-yellow-500">BUY NOW</button>
-                <button class="bg-gray-700 px-6 py-2 rounded text-white hover:bg-gray-600">ADD TO CART</button>
+                <button class="bg-yellow-400 px-6 py-2 text-black font-semibold rounded hover:bg-yellow-500 transition-transform transform hover:scale-110">BUY NOW</button>
+                <button class="bg-gray-700 px-6 py-2 rounded text-white hover:bg-gray-600 transition-transform transform hover:scale-110">ADD TO CART</button>
             </div>
 
         </div>

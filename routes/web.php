@@ -31,6 +31,11 @@ Route::get('/browse', function () {
     return view('browse');
 });
 
+//browse route
+Route::get('/mycollection', function () {
+    return view('mycollection');
+});
+
 
 //book route
 Route::get('/book', function () {
