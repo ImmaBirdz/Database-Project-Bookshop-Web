@@ -68,7 +68,7 @@ class CartController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $cartItem = Cart::where('user_id', Auth::id())->where('cart_id', $cartId)->first();
+        $cartItem = Cart::where('user_id', Auth::id())->where('id', $id)->first();
 
         if($cartItem){
             $cartItem->update([
@@ -84,7 +84,7 @@ class CartController extends Controller
      */
     public function destroy(string $id)
     {
-        Cart::where('user_id', Auth::id())->where('cart_id', $cartId)->delete();
+        Cart::where('user_id', Auth::id())->where('id', $id)->delete();
 
         return redirect()->back()->with('Book removed from cart!');
     }
