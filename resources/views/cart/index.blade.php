@@ -18,7 +18,7 @@
 
                             <div class="flex items-center space-x-4">
                                 <!-- Update Quantity Form -->
-                                <form action="{{ route('cart.update', $cart->cart_id) }}" method="POST">
+                                <form action="{{ route('cart.update', $cart->id) }}" method="POST">
                                     @csrf
                                     @method('PATCH')
                                     <input type="number" name="quantity" value="{{ $cart->quantity }}" min="1" class="border rounded p-2 w-16">
@@ -26,7 +26,7 @@
                                 </form>
 
                                 <!-- Remove from Cart Form -->
-                                <form action="{{ route('cart.remove', $cart->cart_id) }}" method="POST">
+                                <form action="{{ route('cart.remove', $cart->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Remove</button>

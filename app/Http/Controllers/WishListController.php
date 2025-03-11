@@ -14,7 +14,8 @@ class WishListController extends Controller
      */
     public function index()
     {
-        $wishlists = Auth::user()->wishlists()->with('book')->get();
+        $wishlists = Wishlist::where('user_id', Auth::id())->with('books')->get();
+        dd($wishlists);
         return view('wishlist.index',compact('wishlists'));
     }
 
@@ -47,7 +48,8 @@ class WishListController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $wishlist = Auth::user()->wishlists()->with('book')->findOrFail($id);
+        return view('wishlist.show', compact('wishlist'));
     }
 
     /**

@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\WishListController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ExploreController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,17 +28,6 @@ Route::middleware('auth')->group(function () {
 });
 
 
-//browse route
-Route::get('/browse', function () {
-    return view('browse');
-});
-
-//browse route
-Route::get('/mycollection', function () {
-    return view('mycollection');
-});
-
-
 //book route
 Route::get('/book', function () {
     return view('book');
@@ -49,10 +40,9 @@ Route::get('/book', function () {
     return view('book');
 });
 
-// explore route
+// Explore Routes
 Route::get('/explore', function () {
     return view('explore');
 });
-
 
 require __DIR__.'/auth.php';

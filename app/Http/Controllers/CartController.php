@@ -13,7 +13,8 @@ class CartController extends Controller
      * Display a listing of the resource.
      */
     public function index(){
-        $cartItems = Cart::where('user_id', Auth::id())->with('book')->get();
+        $cartItems = Cart::where('user_id', Auth::id())->with('books')->get();
+        dd($cartItems);
         return view('cart.index', compact('cartItems'));
     }
 
@@ -30,6 +31,8 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
+        $bookId = $request->book_id;
+
         $cartItem = Cart::where('user_id', Auth::id())
                         ->where('book_id', $bookId)
                         ->first();
@@ -68,7 +71,7 @@ class CartController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $cartItem = Cart::where('user_id', Auth::id())->where('cart_id', $cartId)->first();
+        $cartItem = Cart::where('user_id', Auth::id())->where('id', $id)->first();
 
         if($cartItem){
             $cartItem->update([
@@ -84,7 +87,7 @@ class CartController extends Controller
      */
     public function destroy(string $id)
     {
-        Cart::where('user_id', Auth::id())->where('cart_id', $cartId)->delete();
+        Cart::where('user_id', Auth::id())->where('id', $id)->delete();
 
         return redirect()->back()->with('Book removed from cart!');
     }
