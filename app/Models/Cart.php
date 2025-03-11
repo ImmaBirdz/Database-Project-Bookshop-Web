@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Cart extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'book_id',
         'user_id',
@@ -13,10 +16,10 @@ class Cart extends Model
     ];
 
     public function users(){
-        return $this->belongsTo(\App\Models\User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function books(){
-        return $this->belongsTo(\App\Models\Book::class);
+        return $this->belongsTo(Book::class);
     }
 }

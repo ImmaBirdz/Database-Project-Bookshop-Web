@@ -13,7 +13,8 @@ class CartController extends Controller
      * Display a listing of the resource.
      */
     public function index(){
-        $cartItems = Cart::where('user_id', Auth::id())->with('book')->get();
+        $cartItems = Cart::where('user_id', Auth::id())->with('books')->get();
+        dd($cartItems);
         return view('cart.index', compact('cartItems'));
     }
 

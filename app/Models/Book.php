@@ -23,10 +23,10 @@ class Book extends Model
     ];
 
     public function wishlists(){
-        return $this->hasMany(\App\Models\Wishlist::class);
+        return $this->hasMany(Wishlist::class);
     }
 
     public function carts(){
-        return $this->hasMany(\App\Models\Cart::class);
+        return $this->hasMany(Cart::class);
     }
 }
