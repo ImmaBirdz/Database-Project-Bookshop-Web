@@ -47,7 +47,8 @@ class WishListController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $wishlist = Auth::user()->wishlists()->with('book')->findOrFail($id);
+        return view('wishlist.show', compact('wishlist'));
     }
 
     /**

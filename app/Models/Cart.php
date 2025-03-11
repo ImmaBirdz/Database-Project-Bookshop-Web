@@ -12,11 +12,11 @@ class Cart extends Model
         'quantity',
     ];
 
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function users(){
+        return $this->belongsTo(\App\Models\User::class);
     }
 
-    public function book(){
-        return $this->belongsTo(Book::class);
+    public function books(){
+        return $this->belongsTo(\App\Models\Book::class);
     }
 }

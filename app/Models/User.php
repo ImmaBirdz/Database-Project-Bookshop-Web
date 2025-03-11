@@ -47,10 +47,10 @@ class User extends Authenticatable
     }
 
     public function wishlists(){
-        return $this->hasMany(Wishlist::class);
+        return $this->hasMany(\App\Models\Wishlist::class);
     }
 
     public function carts(){
-        return $this->hasMany(Cart::class);
+        return $this->hasMany(\App\Models\Cart::class);
     }
 }

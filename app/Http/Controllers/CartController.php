@@ -30,6 +30,8 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
+        $bookId = $request->book_id;
+
         $cartItem = Cart::where('user_id', Auth::id())
                         ->where('book_id', $bookId)
                         ->first();
