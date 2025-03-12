@@ -12,8 +12,8 @@
                     @foreach ($wishlists as $wishlist)
                         <div class="flex justify-between items-center border-b py-4">
                             <div>
-                                <p class="text-lg font-semibold">{{ $wishlist->book->book_title }}</p>
-                                <p class="text-gray-600">${{ $wishlist->book->book_price }}</p>
+                                <p class="text-lg font-semibold">{{ $wishlist->book_title }}</p>
+                                <p class="text-gray-600">${{ $wishlist->book_price }}</p>
                             </div>
 
                             <div class="flex items-center space-x-4">
