@@ -25,6 +25,7 @@ class BookSeeder extends Seeder
                 'updated_at' => Carbon::now(),
                 'author_id' => 1,
                 'publisher_id' => 1,
+                'book_cover' => 'public/images/book_covers/White Night.jpg',
             ],
             [
                 'book_id' => 2, 
@@ -36,6 +37,7 @@ class BookSeeder extends Seeder
                 'updated_at' => Carbon::now(),
                 'author_id' => 2,
                 'publisher_id' => 1,
+                'book_cover' => 'public/images/book_covers/The Fall.jpg',
             ],
             [
                 'book_id' => 3, 
@@ -47,6 +49,7 @@ class BookSeeder extends Seeder
                 'updated_at' => Carbon::now(),
                 'author_id' => 3,
                 'publisher_id' => 6,
+                'book_cover' => 'public/images/book_covers/A Little Life.jpg',
             ],
             [
                 'book_id' => 4, 
@@ -58,6 +61,7 @@ class BookSeeder extends Seeder
                 'updated_at' => Carbon::now(),
                 'author_id' => 4,
                 'publisher_id' => 3,
+                'book_cover' => 'public/images/book_covers/1984.jpg',
             ],
             [
                 'book_id' => 5, 
@@ -69,6 +73,7 @@ class BookSeeder extends Seeder
                 'updated_at' => Carbon::now(),
                 'author_id' => 5,
                 'publisher_id' => 5,
+                'book_cover' => 'public/images/book_covers/Letters to Milena.jpg',
             ],
             [
                 'book_id' => 6, 
@@ -80,6 +85,7 @@ class BookSeeder extends Seeder
                 'updated_at' => Carbon::now(),
                 'author_id' => 6,
                 'publisher_id' => 1,
+                'book_cover' => 'public/images/book_covers/Maurice.jpg',
             ],
             [
                 'book_id' => 7, 
@@ -91,6 +97,7 @@ class BookSeeder extends Seeder
                 'updated_at' => Carbon::now(),
                 'author_id' => 1,
                 'publisher_id' => 1,
+                'book_cover' => 'public/images/book_covers/The Meek One.jpg',
             ],
             [
                 'book_id' => 8, 
@@ -102,6 +109,7 @@ class BookSeeder extends Seeder
                 'updated_at' => Carbon::now(),
                 'author_id' => 5,
                 'publisher_id' => 5,
+                'book_cover' => 'public/images/book_covers/Letter to his Father.jpg',
             ],
             [
                 'book_id' => 9, 
@@ -113,6 +121,7 @@ class BookSeeder extends Seeder
                 'updated_at' => Carbon::now(),
                 'author_id' => 5,
                 'publisher_id' => 1,
+                'book_cover' => 'public/images/book_covers/Diaries.jpg',
             ],
             [
                 'book_id' => 10, 
@@ -124,6 +133,7 @@ class BookSeeder extends Seeder
                 'updated_at' => Carbon::now(),
                 'author_id' => 7,
                 'publisher_id' => 4,
+                'book_cover' => 'public/images/book_covers/The Handmaid Tale.jpg',
             ],
             [
                 'book_id' => 11, 
@@ -135,6 +145,7 @@ class BookSeeder extends Seeder
                 'updated_at' => Carbon::now(),
                 'author_id' => 8,
                 'publisher_id' => 2,
+                'book_cover' => 'public/images/book_covers/LIttle women.jpg',
             ],
             [
                 'book_id' => 12, 
@@ -146,6 +157,7 @@ class BookSeeder extends Seeder
                 'updated_at' => Carbon::now(),
                 'author_id' => 2,
                 'publisher_id' => 1,
+                'book_cover' => 'public/images/book_covers/Caligula and Three Other Plays.jpg',
             ],
             [
                 'book_id' => 13, 
@@ -157,6 +169,7 @@ class BookSeeder extends Seeder
                 'updated_at' => Carbon::now(),
                 'author_id' => 1,
                 'publisher_id' => 1,
+                'book_cover' => 'public/images/book_covers/Poor folk.jpg',
             ],
             [
                 'book_id' => 14, 
@@ -168,6 +181,7 @@ class BookSeeder extends Seeder
                 'updated_at' => Carbon::now(),
                 'author_id' => 4,
                 'publisher_id' => 1,
+                'book_cover' => 'public/images/book_covers/Animal Farm.jpg',
             ],
             [
                 'book_id' => 15, 
@@ -179,6 +193,7 @@ class BookSeeder extends Seeder
                 'updated_at' => Carbon::now(),
                 'author_id' => 5,
                 'publisher_id' => 1,
+                'book_cover' => 'public/images/book_covers/The Metamorphosis.jpg',
             ],           
         ]);
     }
