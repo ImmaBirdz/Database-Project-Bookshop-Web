@@ -45,8 +45,8 @@ Route::middleware('auth')->group(function () { // Auth needed
 });
 
 // Explore Routes
-Route::get('/explore', function () {
-    return view('explore');
-});
+// Route::get('/explore', function () {
+//     return view('explore');
+// });
 
 require __DIR__.'/auth.php';
