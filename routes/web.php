@@ -13,6 +13,7 @@ Route::get('/explore', [ExploreController::class, 'index'])->name('explore.index
 Route::get('/book', [BookController::class, 'index'])->name('book.index'); // Book Page
 Route::get('/book/{id}', [BookController::class, 'show'])->name('book.show'); // Show the particular book Page
 
+
 Route::get('/wishlist', function () { // Wishlist Page : auth needed
     if(Auth::auth()){
         return view('/wishlist');
@@ -44,9 +45,9 @@ Route::middleware('auth')->group(function () { // Auth needed
     Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove'); // Route to remove item from cart
 });
 
-// Explore Routes
-// Route::get('/explore', function () {
-//     return view('explore');
-// });
+Route::get('/myorder', function () {
+    return view('myorder');
+})->name('myorder');
+
 
 require __DIR__.'/auth.php';
