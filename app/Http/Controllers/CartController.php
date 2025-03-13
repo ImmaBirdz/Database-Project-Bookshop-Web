@@ -18,8 +18,10 @@ class CartController extends Controller
         // FROM carts
         // JOIN books ON carts.book_id = books.id
         // WHERE user_id = Auth::id()
+        
         $cartItems = Cart::where('user_id', Auth::id())
                         ->join('books', 'carts.book_id', '=', 'books.id')
+                        ->select('carts.id as cart_id', 'books.*', 'carts.quantity')
                         ->get();
         return view('cart.index', compact('cartItems'));
     }
@@ -35,21 +37,25 @@ class CartController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, string $id)
     {
-        $bookId = $request->book_id;
+        $bookId = $id;
+
 
         $cartItem = Cart::where('user_id', Auth::id())
                         ->where('book_id', $bookId)
                         ->first();
         
         if($cartItem){
-            $cartItem->increment('quantity');
+            // can limit the quantity here using if-else
+            $cartItem->update([
+                'quantity' => $cartItem->quantity + $request->quantity
+            ]);
         }else{
             Cart::create([
                 'user_id' => Auth::id(),
                 'book_id' => $bookId,
-                'quantity' => 1,
+                'quantity' => $request->quantity
             ]);
         }
 
@@ -83,9 +89,12 @@ class CartController extends Controller
             $cartItem->update([
                 'quantity' => $request->quantity
             ]);
+
         }
 
+
         return redirect()->back()->with('success', 'Cart updated successfully!');
+
     }
 
     /**
@@ -95,7 +104,7 @@ class CartController extends Controller
     {
         Cart::where('user_id', Auth::id())->where('id', $id)->delete();
 
-        return redirect()->back()->with('Book removed from cart!');
+        return redirect()->back()->with('delete', 'Book removed from cart!');
     }
 
 }
