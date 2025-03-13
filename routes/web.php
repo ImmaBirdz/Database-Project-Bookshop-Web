@@ -7,22 +7,32 @@ use App\Http\Controllers\WishListController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ExploreController;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [ExploreController::class, 'index']); // Home Page as Explore Page
+
+Route::get('/explore', [ExploreController::class, 'index'])->name('explore.index'); // Explore Page
+Route::get('/book', [BookController::class, 'index'])->name('book.index'); // Book Page
+Route::get('/book/{id}', [BookController::class, 'show'])->name('book.show'); // Show the particular book Page
+
+Route::get('/wishlist', function () { // Wishlist Page : auth needed
+    if(Auth::auth()){
+        return view('/wishlist');
+    }else{
+        return redirect('/login');
+    }
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/cart', function () { // Cart Page : auth needed
+    if(Auth::auth()){
+        return view('/cart');
+    }else{
+        return redirect('/login');
+    }
+});
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth')->group(function () { // Auth needed
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-    Route::resource('explore', ExploreController::class); // Explore Routes
-    
-    Route::resource('book', BookController::class); // Book Routes
 
     Route::resource('wishlist', WishListController::class); // Wishlist Routes
     Route::delete('/wishlist/{id}', [WishlistController::class, 'remove'])->name('wishlist.remove'); // Route to remove item from wishlist
