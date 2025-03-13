@@ -15,7 +15,7 @@
                 </li>
                 <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                     <i class="fas fa-search"></i>
-                    <button class="ml-2 text-black bg-transparent border-none">Browse</button>
+                   <button onclick="window.location.href='http://localhost/browse'" class="ml-2 text-black bg-transparent border-none">Browse</button>
                 </li>
                 <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                     <i class="fas fa-shopping-cart"></i>
@@ -26,7 +26,7 @@
             <ul class="space-y-2 mt-2">
                 <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                     <i class="fas fa-list"></i>
-                    <button class="ml-2 text-black bg-transparent border-none">Collections</button>
+                    <button onclick="window.location.href='http://localhost/mycollection'" class="ml-2 text-black bg-transparent border-none">Collections</button>
                 </li>
                 <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                     <i class="fas fa-heart"></i>
@@ -44,10 +44,6 @@
     <main class="flex-1 p-6">
         <div class="flex justify-between items-center">
             <h2 class="text-2xl font-bold">Explore</h2>
-            <div>
-                <button class="bg-[#454545] px-4 py-2 rounded mr-2 text-white">My Cart</button>
-                <button class="bg-black px-4 py-2 rounded text-white">Log Out</button>
-            </div>
         </div>
         <div>
             <h3 class="text-xl font-bold mt-6">Books List</h3>

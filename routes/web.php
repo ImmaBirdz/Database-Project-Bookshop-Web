@@ -34,12 +34,19 @@ Route::middleware('auth')->group(function () { // Auth needed
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::resource('explore', ExploreController::class); // Explore Routes
+    
+    Route::resource('book', BookController::class); // Book Routes
+
     Route::resource('wishlist', WishListController::class); // Wishlist Routes
     Route::delete('/wishlist/{id}', [WishlistController::class, 'remove'])->name('wishlist.remove'); // Route to remove item from wishlist
-
-    Route::resource('/cart', CartController::class); // Wishlist Routes
-    Route::patch('/cart/{id}', [CartController::class, 'update'])->name('cart.update'); // Route to update item in cart
+    Route::resource('cart', CartController::class); // Wishlist Routes
     Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove'); // Route to remove item from cart
 });
+
+// Explore Routes
+// Route::get('/explore', function () {
+//     return view('explore');
+// });
 
 require __DIR__.'/auth.php';
