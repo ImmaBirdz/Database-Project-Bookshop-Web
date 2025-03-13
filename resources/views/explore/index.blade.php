@@ -58,6 +58,12 @@
                 <img src="{{ $book->image_url }}" alt="{{ $book->title }}" class="w-full h-auto mb-4" style="max-width: 286px; max-height: 432px;">
                 <div class="text-lg font-semibold">{{ $book->book_title }}</div>
                 <p class="text-sm text-gray-600">{{ $book->book_author }}</p>
+                <!-- book price -->
+                <p class="text-sm text-gray-600">{{ $book->book_price }}</p>
+                <div class="mt-4">
+                    <button class="bg-[#454545] px-4 py-2 rounded mr-2 text-white">Add to Cart</button>
+                    <button class="bg-black px-4 py-2 rounded text-white">View Details</button>
+                </div>
             </div>
             @endforeach
             </div>
