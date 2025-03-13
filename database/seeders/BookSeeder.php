@@ -22,7 +22,9 @@ class BookSeeder extends Seeder
                 'book_price' => 200, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 1,
+                'publisher_id' => 1,
             ],
             [
                 'book_id' => 2, 
@@ -31,7 +33,9 @@ class BookSeeder extends Seeder
                 'book_price' => 650, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 2,
+                'publisher_id' => 1,
             ],
             [
                 'book_id' => 3, 
@@ -40,7 +44,9 @@ class BookSeeder extends Seeder
                 'book_price' => 550, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 3,
+                'publisher_id' => 6,
             ],
             [
                 'book_id' => 4, 
@@ -49,7 +55,9 @@ class BookSeeder extends Seeder
                 'book_price' => 500, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 4,
+                'publisher_id' => 3,
             ],
             [
                 'book_id' => 5, 
@@ -58,7 +66,9 @@ class BookSeeder extends Seeder
                 'book_price' => 650, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 5,
+                'publisher_id' => 5,
             ],
             [
                 'book_id' => 6, 
@@ -67,7 +77,9 @@ class BookSeeder extends Seeder
                 'book_price' => 650, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 6,
+                'publisher_id' => 1,
             ],
             [
                 'book_id' => 7, 
@@ -76,7 +88,9 @@ class BookSeeder extends Seeder
                 'book_price' => 200, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 1,
+                'publisher_id' => 1,
             ],
             [
                 'book_id' => 8, 
@@ -85,7 +99,9 @@ class BookSeeder extends Seeder
                 'book_price' => 900, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 5,
+                'publisher_id' => 5,
             ],
             [
                 'book_id' => 9, 
@@ -94,7 +110,9 @@ class BookSeeder extends Seeder
                 'book_price' => 1500, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 5,
+                'publisher_id' => 1,
             ],
             [
                 'book_id' => 10, 
@@ -103,7 +121,9 @@ class BookSeeder extends Seeder
                 'book_price' => 650, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 7,
+                'publisher_id' => 4,
             ],
             [
                 'book_id' => 11, 
@@ -112,7 +132,9 @@ class BookSeeder extends Seeder
                 'book_price' => 650, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 8,
+                'publisher_id' => 2,
             ],
             [
                 'book_id' => 12, 
@@ -121,7 +143,9 @@ class BookSeeder extends Seeder
                 'book_price' => 650, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 2,
+                'publisher_id' => 1,
             ],
             [
                 'book_id' => 13, 
@@ -130,7 +154,9 @@ class BookSeeder extends Seeder
                 'book_price' => 550, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 1,
+                'publisher_id' => 1,
             ],
             [
                 'book_id' => 14, 
@@ -139,7 +165,9 @@ class BookSeeder extends Seeder
                 'book_price' => 750, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 4,
+                'publisher_id' => 1,
             ],
             [
                 'book_id' => 15, 
@@ -148,7 +176,9 @@ class BookSeeder extends Seeder
                 'book_price' => 550, 
                 'book_status' => true,
                 'created_at' => Carbon::now(), 
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 5,
+                'publisher_id' => 1,
             ],           
         ]);
     }
