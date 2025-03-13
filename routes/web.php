@@ -19,40 +19,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-    // Wishlist Routes
-    Route::resource('wishlist', WishListController::class);
-
-    // Wishlist Routes
-    Route::resource('cart', CartController::class);
-});
-
-
-//book route
-Route::get('/book', function () {
-    return view('book');
-});
-
-
-
-//book route
-Route::get('/book', function () {
-    return view('book');
+    Route::resource('book', BookController::class); // Book Routes
+    Route::resource('wishlist', WishListController::class); // Wishlist Routes
+    Route::delete('/wishlist/{id}', [WishlistController::class, 'remove'])->name('wishlist.remove'); // Route to remove item from wishlist
+    Route::resource('cart', CartController::class); // Wishlist Routes
+    Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove'); // Route to remove item from cart
 });
 
 // Explore Routes
 Route::get('/explore', function () {
     return view('explore');
-});
-
-//browse route
-Route::get('/browse', function () {
-    return view('browse');
-});
-
-//collection route
-Route::get('/mycollection', function () {
-    return view('mycollection');
 });
 
 require __DIR__.'/auth.php';
