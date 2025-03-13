@@ -20,8 +20,8 @@ class CartController extends Controller
         // WHERE user_id = Auth::id()
         
         $cartItems = Cart::where('user_id', Auth::id())
-                        ->join('books', 'carts.book_id', '=', 'books.id')
-                        ->select('carts.id as cart_id', 'books.*', 'carts.quantity')
+                        ->join('books', 'carts.book_id', '=', 'books.book_id')
+                        ->select('carts.cart_id as cart_id', 'books.*', 'carts.quantity')
                         ->get();
         return view('cart.index', compact('cartItems'));
     }

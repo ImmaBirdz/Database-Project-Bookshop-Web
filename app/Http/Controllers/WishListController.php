@@ -20,7 +20,7 @@ class WishListController extends Controller
         // JOIN books ON wishlist.book_id = books.id
         // WHERE user_id = Auth::id()
         $wishlists = Auth::user()->wishlists()
-                        ->join('books', 'wishlists.book_id', '=', 'books.id')
+                        ->join('books', 'wishlists.book_id', '=', 'books.book_id')
                         ->get();
 
         // dd($wishlists);

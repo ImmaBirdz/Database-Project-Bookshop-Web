@@ -15,9 +15,10 @@ class ExploreController extends Controller
         // JOIN authors ON books.author_id = authors.id
         // JOIN publishers ON books.publisher_id = publishers.id
         // THIS IS THE CORRECT ONE
-        $books = Book::join('authors', 'books.author_id', '=', 'authors.id')
-                    ->join('publishers', 'books.publisher_id', '=', 'publishers.id')
+        $books = Book::join('authors', 'books.author_id', '=', 'authors.author_id')
+                    ->join('publishers', 'books.publisher_id', '=', 'publishers.publisher_id')
                     ->get();
+        // $books = Book::all();
 
         return view('explore.index', compact('books'));
     }
