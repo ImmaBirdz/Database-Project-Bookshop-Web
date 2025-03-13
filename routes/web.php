@@ -24,7 +24,7 @@ Route::get('/wishlist', function () { // Wishlist Page : auth needed
 Route::get('/cart', function () { // Cart Page : auth needed
     if(Auth::auth()){
         return view('/cart');
-    }else{
+    }else{  
         return redirect('/login');
     }
 });
@@ -40,13 +40,12 @@ Route::middleware('auth')->group(function () { // Auth needed
 
     Route::resource('wishlist', WishListController::class); // Wishlist Routes
     Route::delete('/wishlist/{id}', [WishlistController::class, 'remove'])->name('wishlist.remove'); // Route to remove item from wishlist
-    Route::resource('cart', CartController::class); // Wishlist Routes
+
+
+    Route::resource('/cart', CartController::class); // Wishlist Routes
+    Route::post('/cart/{id}', [CartController::class, 'store'])->name('cart.store'); // Route to add item to cart
+    Route::patch('/cart/{id}', [CartController::class, 'update'])->name('cart.update'); // Route to update item in cart
     Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove'); // Route to remove item from cart
 });
-
-// Explore Routes
-// Route::get('/explore', function () {
-//     return view('explore');
-// });
 
 require __DIR__.'/auth.php';

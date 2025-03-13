@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tracking_details', function (Blueprint $table) {
-            $table->id();
             $table->string('tracking_number')->unique();
             $table->string('tracking_status');
             $table->foreignId('order_id')->constrained();
