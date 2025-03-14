@@ -9,7 +9,9 @@ class Wishlist extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'wishlist_id';
     protected $fillable = [
+        'wishlist_id',
         'book_id',
         'user_id',
     ];

@@ -15,16 +15,48 @@ class CartSeeder extends Seeder
     public function run(): void
     {
         DB::table('carts')->insert([
-            ['user_id' => 1, 'book_id' => 1],
-            ['user_id' => 2, 'book_id' => 1],
-            ['user_id' => 2, 'book_id' => 5],
-            ['user_id' => 3, 'book_id' => 8],
-            ['user_id' => 3, 'book_id' => 10],
-            ['user_id' => 4, 'book_id' => 15],
-            ['user_id' => 5, 'book_id' => 15],
-            ['user_id' => 5, 'book_id' => 5],
-            ['user_id' => 5, 'book_id' => 7],
-            ['user_id' => 6, 'book_id' => 10],
+            [
+                'user_id' => 2,
+                'book_id' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            // [
+            //     'user_id' => 2,
+            //     'book_id' => 5,
+            //     'created_at' => Carbon::now(),
+            //     'updated_at' => Carbon::now()
+            // ],
+            [
+                'user_id' => 2,
+                'book_id' => 8,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'user_id' => 2,
+                'book_id' => 10,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'user_id' => 2,
+                'book_id' => 15,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'user_id' => 2,
+                'book_id' => 5,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'user_id' => 2,
+                'book_id' => 7,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
         ]);
     }
 }

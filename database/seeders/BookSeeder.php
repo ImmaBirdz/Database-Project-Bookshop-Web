@@ -22,7 +22,10 @@ class BookSeeder extends Seeder
                 'book_price' => 200, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 1,
+                'publisher_id' => 1,
+                'book_cover' => 'https://m.media-amazon.com/images/I/51lMJWnnRDL._SY425_.jpg',
             ],
             [
                 'book_id' => 2, 
@@ -31,7 +34,10 @@ class BookSeeder extends Seeder
                 'book_price' => 650, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 2,
+                'publisher_id' => 1,
+                'book_cover' => 'https://m.media-amazon.com/images/I/71gJ+qu1BcL._AC_UF894,1000_QL80_.jpg',
             ],
             [
                 'book_id' => 3, 
@@ -40,7 +46,10 @@ class BookSeeder extends Seeder
                 'book_price' => 550, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 3,
+                'publisher_id' => 6,
+                'book_cover' => 'https://bci.kinokuniya.com/jsp/images/book-img/97814/97814472/9781447294832.JPG',
             ],
             [
                 'book_id' => 4, 
@@ -49,7 +58,10 @@ class BookSeeder extends Seeder
                 'book_price' => 500, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 4,
+                'publisher_id' => 3,
+                'book_cover' => 'https://m.media-amazon.com/images/I/41npbX6XRTL._SY445_SX342_.jpg',
             ],
             [
                 'book_id' => 5, 
@@ -58,7 +70,10 @@ class BookSeeder extends Seeder
                 'book_price' => 650, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 5,
+                'publisher_id' => 5,
+                'book_cover' => 'https://m.media-amazon.com/images/I/71NxaDZFDSL._AC_UF1000,1000_QL80_.jpg',
             ],
             [
                 'book_id' => 6, 
@@ -67,7 +82,10 @@ class BookSeeder extends Seeder
                 'book_price' => 650, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 6,
+                'publisher_id' => 1,
+                'book_cover' => 'https://m.media-amazon.com/images/I/418fW6A91gL._SY445_SX342_.jpg',
             ],
             [
                 'book_id' => 7, 
@@ -76,7 +94,10 @@ class BookSeeder extends Seeder
                 'book_price' => 200, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 1,
+                'publisher_id' => 1,
+                'book_cover' => 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1423754119i/24874310.jpg',
             ],
             [
                 'book_id' => 8, 
@@ -85,7 +106,10 @@ class BookSeeder extends Seeder
                 'book_price' => 900, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 5,
+                'publisher_id' => 5,
+                'book_cover' => 'https://m.media-amazon.com/images/I/31iNFShPX8L._SY445_SX342_.jpg',
             ],
             [
                 'book_id' => 9, 
@@ -94,7 +118,10 @@ class BookSeeder extends Seeder
                 'book_price' => 1500, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 5,
+                'publisher_id' => 1,
+                'book_cover' => 'https://m.media-amazon.com/images/I/31E1zhgjaxL._SY445_SX342_.jpg',
             ],
             [
                 'book_id' => 10, 
@@ -103,7 +130,10 @@ class BookSeeder extends Seeder
                 'book_price' => 650, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 7,
+                'publisher_id' => 4,
+                'book_cover' => 'https://m.media-amazon.com/images/I/31zzmiNcUuL._SY445_SX342_.jpg',
             ],
             [
                 'book_id' => 11, 
@@ -112,7 +142,10 @@ class BookSeeder extends Seeder
                 'book_price' => 650, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 8,
+                'publisher_id' => 2,
+                'book_cover' => 'https://bci.kinokuniya.com/jsp/images/book-img/97819/97819173/9781917349055.JPG',
             ],
             [
                 'book_id' => 12, 
@@ -121,7 +154,10 @@ class BookSeeder extends Seeder
                 'book_price' => 650, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 2,
+                'publisher_id' => 1,
+                'book_cover' => 'https://cdn2.penguin.com.au/covers/400/9780141978888.jpg',
             ],
             [
                 'book_id' => 13, 
@@ -130,7 +166,10 @@ class BookSeeder extends Seeder
                 'book_price' => 550, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 1,
+                'publisher_id' => 1,
+                'book_cover' => 'https://bci.kinokuniya.com/jsp/images/book-img/97801/97801404/9780140445053.JPG',
             ],
             [
                 'book_id' => 14, 
@@ -139,7 +178,10 @@ class BookSeeder extends Seeder
                 'book_price' => 750, 
                 'book_status' => true,
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 4,
+                'publisher_id' => 1,
+                'book_cover' => 'https://bci.kinokuniya.com/jsp/images/book-img/97802/97802413/9780241341667.JPG',
             ],
             [
                 'book_id' => 15, 
@@ -148,7 +190,10 @@ class BookSeeder extends Seeder
                 'book_price' => 550, 
                 'book_status' => true,
                 'created_at' => Carbon::now(), 
-                'updated_at' => Carbon::now()
+                'updated_at' => Carbon::now(),
+                'author_id' => 5,
+                'publisher_id' => 1,
+                'book_cover' => 'https://m.media-amazon.com/images/I/71E3k6tRZSL.jpg',
             ],           
         ]);
     }

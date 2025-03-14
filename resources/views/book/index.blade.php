@@ -73,8 +73,13 @@
 
             <!-- add to cart & buy now button -->
             <div class="ml-1 flex flex-col space-y-3">
-                <button class="bg-yellow-400 px-6 py-2 text-black font-semibold rounded hover:bg-yellow-500 transition-transform transform hover:scale-110">BUY NOW</button>
-                <button class="bg-gray-700 px-6 py-2 rounded text-white hover:bg-gray-600 transition-transform transform hover:scale-110">ADD TO CART</button>
+                <button class="bg-yellow-400 px-6 py-2 text-black font-semibold rounded">BUY NOW</button>
+                <form action="{{ route('cart.store', 1) }}" method="POST"> <!-- 1 is the book ID -->
+                    @csrf
+                    @method('POST')
+                    <input type="number" name="quantity" value="1" min="1" class="border rounded p-2 w-16"> <!-- Quantity -->
+                    <button type="submit" class="bg-gray-700 px-6 py-2 rounded text-white">ADD TO CART</button>
+                </form>
             </div>
 
         </div>
