@@ -17,7 +17,7 @@ class ExploreController extends Controller
         // THIS IS THE CORRECT ONE
         $books = Book::join('authors', 'books.author_id', '=', 'authors.author_id')
                     ->join('publishers', 'books.publisher_id', '=', 'publishers.publisher_id')
-                    ->get();
+                    ->paginate(8);
         // $books = Book::all();
 
         return view('explore.index', compact('books'));
