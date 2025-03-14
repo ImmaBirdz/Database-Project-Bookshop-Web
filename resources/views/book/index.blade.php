@@ -52,23 +52,23 @@
         <div class="mt-10 flex flex-col items-center relative">
          <!-- Price Tag -->
         <div class="absolute top-2 right-44 bg-[#F7F7F7] text-white px-2 py-1 rounded-sm flex items-center space-x-2 text-sm">
-            <span class="bg-white text-black px-2 py-1 rounded-sm font-bold ml-[-3px]">15$</span>
+            <span class="bg-white text-black px-2 py-1 rounded-sm font-bold ml-[-3px]">$ {{ $book->book_price }}</span>
             <span class="text-red-500 font-bold">SALE -15%</span>
         </div>
 
 
 
             <!-- Book Image -->
-            <img src="/path-to-image.jpg" alt="Book pic" class="w-[350px] h-[524px] rounded-lg ">
+            <img src="{{ $book->book_cover }}" alt="Book pic" class="w-[350px] h-[524px] rounded-lg ">
         </div>
 
         <!-- Book Details & Buttons -->
         <div class="mt-6 flex justify-between items-start w-full">
             <!-- Left Side: Text -->
             <div class="text-left">
-                <h3 class="text-xl font-bold">Harry Potter and the Prisoner of Azkaban</h3>
-                <p class="text-gray-400">J. K. Rowling</p>
-                <p class="text-gray-500">info (if have)</p>
+                <h3 class="text-xl font-bold">{{ $book->book_title }}</h3>
+                <p class="text-gray-400">{{ $book->author_name }}</p>
+                <p class="text-gray-500">{{ $book->publisher_name }}</p>
             </div>
 
             <!-- add to cart & buy now button -->
