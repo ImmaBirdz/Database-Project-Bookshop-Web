@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex min-h-screen bg-black text-black" style="background-color: rgba(255, 182, 193, 0.7) ; background-size: cover; background-position: center;">
+<div class="flex min-h-screen bg-black text-black" style="background-color: rgba(161, 152, 154, 0.7) ; background-size: cover; background-position: center;">
     <div class="container mx-auto p-6">
         <h1 class="text-3xl font-bold text-white">Your Order Summary</h1>
         <p class="mt-4 text-white">Review your selected books before checkout.</p>
@@ -58,9 +58,9 @@
                     <!-- Quantity and Total Price -->
                     <div class="flex items-center space-x-4">
                         <div class="flex items-center space-x-2">
-                            
+
                             <!-- Decrement Quantity -->
-                            <button class="px-2 py-1 text-white bg-blue-500 rounded-full hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-300 decrease-btn" data-book-index="{{ $loop->index }}">
+                            <button class="px-2 py-1 text-white bg-gray-500 rounded-full hover:bg-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-300 decrease-btn" data-book-index="{{ $loop->index }}">
                                 &minus;
                             </button>
 
@@ -68,7 +68,7 @@
                             <p class="text-sm text-gray-600 quantity-display" id="quantity-{{ $loop->index }}">{{ $book->quantity }}</p>
 
                             <!-- Increment Quantity -->
-                            <button class="px-2 py-1 text-white bg-pink-500 rounded-full hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-300 increase-btn" data-book-index="{{ $loop->index }}">
+                            <button class="px-2 py-1 text-white bg-gray-500 rounded-full hover:bg-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-300 increase-btn" data-book-index="{{ $loop->index }}">
                                 &plus;
                             </button>
                         </div>
