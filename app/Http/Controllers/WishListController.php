@@ -15,15 +15,16 @@ class WishListController extends Controller
     public function index()
     {
         // $wishlists
-        // SELECT *
+        // SELECT wishlists.*, books.*, authors.author_name
         // FROM wishlists
         // JOIN books ON wishlist.book_id = books.id
+        // JOIN authors ON books.author_id = authors.id
         // WHERE user_id = Auth::id()
         $wishlists = Auth::user()->wishlists()
-                        ->join('books', 'wishlists.book_id', '=', 'books.book_id')
-                        ->get();
-
-        // dd($wishlists);
+                ->join('books', 'wishlists.book_id', '=', 'books.book_id')
+                ->join('authors', 'books.author_id', '=', 'authors.author_id')
+                ->select('wishlists.*', 'books.*', 'authors.author_name')
+                ->get();
         return view('wishlist.index',compact('wishlists'));
     }
 
