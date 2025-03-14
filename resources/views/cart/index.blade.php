@@ -13,7 +13,7 @@
                         <div class="flex justify-between items-center border-b py-4">
                             <div>
                                 <p class="text-lg font-semibold">{{ $cart->book_title }}</p>
-                                <p class="text-gray-600">{{ $cart->book_author ?? 'No author' }}</p>
+                                <p class="text-gray-600">{{ $cart->author_name }}</p>
                                 <p class="text-gray-600">${{ $cart->book_price }}</p>
                             </div>
 
