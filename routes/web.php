@@ -48,4 +48,9 @@ Route::middleware('auth')->group(function () { // Auth needed
     Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove'); // Route to remove item from cart
 });
 
+
+Route::get('/myorder', function () {
+    return view('myorder');
+});
+
 require __DIR__.'/auth.php';

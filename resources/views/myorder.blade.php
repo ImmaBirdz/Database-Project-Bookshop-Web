@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex min-h-screen bg-black text-black" style="background-image: url('https://images.steamusercontent.com/ugc/586909633581902758/BCAF264131B1B1792A7F985BFDCB749844A7DB8B/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false'); background-size: cover; background-position: center;">
+<div class="flex min-h-screen bg-black text-black" style="background-color: rgba(255, 182, 193, 0.7) ; background-size: cover; background-position: center;">
     <div class="container mx-auto p-6">
         <h1 class="text-3xl font-bold text-white">Your Order Summary</h1>
-        <p class="mt-4 text-gray-50">Review your selected books before checkout.</p>
+        <p class="mt-4 text-white">Review your selected books before checkout.</p>
 
         <!-- Order List -->
-        <div class="mt-6 space-y-6 bg-opacity-70 p-4 rounded-lg shadow-lg"> 
+        <div class="mt-6 space-y-6 bg-opacity-70 p-4 rounded-lg "> 
 
             @php
                 //  book data for preview
@@ -38,7 +38,11 @@
 
             <!-- Display books -->
             @foreach($books as $book)
-                <div class="flex items-center justify-between bg-gray-50 p-4 rounded-lg shadow-lg" id="book-{{ $loop->index }}">
+                <div class="relative flex items-center justify-between bg-gray-50 p-4 rounded-lg " id="book-{{ $loop->index }}">
+
+                    <!-- Delete Button -->
+                    <button class="absolute top-2 right-4 text-black hover:text-red-700 delete-btn" data-book-index="{{ $loop->index }}">&times;</button>
+                    
                     <!-- Book Image -->
                     <div class="w-24 h-32 bg-gray-300 overflow-hidden ">
                         <img src="{{ $book->image_url }}" alt="{{ $book->title }}" class="w-full h-full object-cover">
@@ -54,6 +58,7 @@
                     <!-- Quantity and Total Price -->
                     <div class="flex items-center space-x-4">
                         <div class="flex items-center space-x-2">
+                            
                             <!-- Decrement Quantity -->
                             <button class="px-2 py-1 text-white bg-blue-500 rounded-full hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-300 decrease-btn" data-book-index="{{ $loop->index }}">
                                 &minus;
@@ -79,17 +84,13 @@
             <p class="text-xl font-bold text-gray-800" id="grand-total">${{ collect($books)->sum(fn($book) => $book->price * $book->quantity) }}</p>
         </div>
 
-        <!-- Checkout Button -->
         <div class="mt-6 flex justify-center">
-            <x-primary-button class="px-6 py-2 rounded-full">
+            <x-primary-button class="px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-110 hover:bg-pink-500">
                 Proceed to Checkout
             </x-primary-button>
         </div>
-    </div>
 </div>
 
-
-<!-- ah is see y the button didnt work cos in the above i didnt use$book to refer to book data-->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         // Function to update the total price when quantity changes
@@ -99,7 +100,7 @@
             const totalPrice = quantity * price;
             
             document.getElementById(`total-price-${bookIndex}`).innerText = `$${totalPrice}`;
-            updateGrandTotal(); // Update the grand total after changing quantity
+            updateGrandTotal(); 
         }
 
         // Function to update the grand total
@@ -113,25 +114,12 @@
             document.getElementById('grand-total').innerText = `$${grandTotal}`;
         }
 
-        // Increase quantity event listener
-        document.querySelectorAll('.increase-btn').forEach(button => {
+        // Delete book from the order list
+        document.querySelectorAll('.delete-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const bookIndex = this.getAttribute('data-book-index');
-                const quantityDisplay = document.getElementById(`quantity-${bookIndex}`);
-                quantityDisplay.innerText = parseInt(quantityDisplay.innerText) + 1;
-                updatePrice(bookIndex);
-            });
-        });
-
-        // Decrease quantity event listener
-        document.querySelectorAll('.decrease-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const bookIndex = this.getAttribute('data-book-index');
-                const quantityDisplay = document.getElementById(`quantity-${bookIndex}`);
-                if (parseInt(quantityDisplay.innerText) > 1) {
-                    quantityDisplay.innerText = parseInt(quantityDisplay.innerText) - 1;
-                    updatePrice(bookIndex);
-                }
+                document.getElementById(`book-${bookIndex}`).remove();
+                updateGrandTotal();
             });
         });
     });
