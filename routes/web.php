@@ -34,9 +34,9 @@ Route::middleware('auth')->group(function () { // Auth needed
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::resource('explore', ExploreController::class); // Explore Routes
+    // Route::resource('explore', ExploreController::class); // Explore Routes
     
-    Route::resource('book', BookController::class); // Book Routes
+    // Route::resource('book', BookController::class); // Book Routes
 
     Route::resource('wishlist', WishListController::class); // Wishlist Routes
     Route::delete('/wishlist/{id}', [WishlistController::class, 'remove'])->name('wishlist.remove'); // Route to remove item from wishlist
