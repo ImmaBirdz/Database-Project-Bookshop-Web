@@ -55,8 +55,12 @@
                 <p class="text-sm text-gray-600">{{ $book->author_name }}</p>
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2 mb-2">{{ $book->book_category }}</span>
                 <p class="text-sm text-gray-600">${{ $book->book_price }}</p>
-                <div class="mt-4">
-                    <button class="bg-[#454545] px-4 py-2 rounded mr-2 text-white">Add to Cart</button>
+                <div class="mt-4 flex items-center ">
+                    <form action="{{ route('cart.store', $book->book_id) }}" method="POST">
+                        @csrf
+                        @method('POST')
+                        <button type="submit" class="bg-[#454545] px-4 py-2 rounded mr-2 text-white">Add to Cart</button>
+                    </form>
                     <button onclick="window.location.href='{{ url("book/{$book->book_id}") }}'" class="bg-black px-4 py-2 rounded text-white">View Details</button>
                 </div>
             </div>
