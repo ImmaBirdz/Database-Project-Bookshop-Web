@@ -54,7 +54,7 @@ class CartController extends Controller
             Cart::create([
                 'user_id' => Auth::id(),
                 'book_id' => $bookId,
-                'quantity' => $request->quantity
+                'quantity' => $request->quantity ?? 1
             ]);
         }
 
