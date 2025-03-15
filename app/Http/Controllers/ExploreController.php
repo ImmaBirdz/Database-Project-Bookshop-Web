@@ -23,8 +23,10 @@ class ExploreController extends Controller
         // $wishlists
         // SELECT *
         // FROM wishlists
+        // JOIN books ON wishlists.book_id = books.book_id
+        // JOIN authors ON books.author_id = authors.author_id
         // WHERE user_id = Auth::id()
-        $wishlists = Auth::user()->wishlists()
+        $wishlists = Wishlist::where('user_id', Auth::id())
                     ->join('books', 'wishlists.book_id', '=', 'books.book_id')
                     ->join('authors', 'books.author_id', '=', 'authors.author_id')
                     ->select('wishlists.*', 'books.*', 'authors.author_name')

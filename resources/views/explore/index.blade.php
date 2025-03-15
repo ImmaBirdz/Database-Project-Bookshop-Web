@@ -53,7 +53,7 @@
                 <img src="{{ $book->book_cover }}" alt="{{ $book->title }}" class="w-full h-auto mb-4" style="width: 286px; height: 432px;">
                 <div class="text-lg font-semibold flex items-center justify-between">
                     {{ $book->book_title }}
-                    @if($wishlists->where('book_id', $book->book_id)->exists() && Auth::check())
+                    @if(isset($wishlists) && $wishlists->where('book_id', $book->book_id)->exists() && Auth::check())
                     <form class="font-bold cursor-pointer text-yellow-400 hover:text-yellow-500 transition duration-300 ease-in-out transform text-3xl"
                         action="{{ route('wishlist.destroy', $book->book_id) }}" method="POST">
                         @csrf
