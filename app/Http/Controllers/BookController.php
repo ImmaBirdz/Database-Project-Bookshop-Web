@@ -33,6 +33,12 @@ class BookController extends Controller
                     ->join('publishers', 'books.publisher_id', '=', 'publishers.publisher_id')
                     ->where('books.book_id', $id)
                     ->firstOrFail();
+        // $wishlist
+        // SELECT *
+        // FROM wishlists
+        // WHERE user_id = Auth::id()
+        $wishlist = Wishlist::where('user_id', Auth::id())
+                            ->first();
 
         // $isInWishlist
         // SELECT *
@@ -41,7 +47,7 @@ class BookController extends Controller
         $isInWishlist = Wishlist::where('book_id', $id)
                         ->where('user_id', Auth::id())
                         ->exists();
-        return view('book.show', compact('book', 'isInWishlist'));
+        return view('book.show', compact('book', 'wishlist', 'isInWishlist'));
     }
 
     public function create()
