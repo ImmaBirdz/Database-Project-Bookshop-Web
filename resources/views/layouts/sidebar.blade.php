@@ -7,9 +7,9 @@
                 <i class="fas fa-home"></i>
                 <button onclick="window.location.href='{{ url('/explore') }}'" class="ml-2 text-black bg-transparent border-none">Home</button>
             </li>
-            <li class="flex items-center px-3 py-2 rounded-lg bg-gray-100">
+            <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                 <i class="fas fa-search"></i>
-                <button class="ml-2 text-black bg-transparent border-none">Browse</button>
+                <button onclick="window.location.href='{{ url('/browse') }}'" class="ml-2 text-black bg-transparent border-none">Browse</button>
             </li>
         </ul>
         <p class="text-sm font-semibold text-gray-600 mt-4">Library</p>

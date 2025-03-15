@@ -58,4 +58,8 @@ Route::get('/browse', function () {
     return view('browse');
 });
 
+Route::get('/mycollection', function () {
+    return view('mycollection');
+});
+
 require __DIR__.'/auth.php';
