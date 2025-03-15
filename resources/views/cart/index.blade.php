@@ -30,7 +30,7 @@
                                 <form id="delete-form-{{ $cart->cart_id }}" action="{{ route('cart.destroy', $cart->cart_id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="button" onclick="confirmDelete({{ $cart->cart_id }})" class="bg-red-500 text-white px-4 py-2 rounded">Remove</button>
+                                    <button type="submit" onclick="confirmDelete({{ $cart->cart_id }})" class="bg-red-500 text-white px-4 py-2 rounded">Remove</button>
                                 </form>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
-                    text: '{{ session('status') }}',
+                    text: '{{ session('success') }}',
                     confirmButtonText: 'OK',
                     confirmButtonColor: '#3085d6'
                 });
