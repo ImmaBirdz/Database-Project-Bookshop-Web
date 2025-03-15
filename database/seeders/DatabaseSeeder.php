@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             PublisherSeeder::class,
             BookSeeder::class,
             CartSeeder::class,
-            WishlistSeeder::class,
+            WishListSeeder::class,
         ]);
     }
 }

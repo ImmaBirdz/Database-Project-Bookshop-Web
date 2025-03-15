@@ -20,9 +20,10 @@ class CartController extends Controller
         // WHERE user_id = Auth::id()
         
         $cartItems = Cart::where('user_id', Auth::id())
-                        ->join('books', 'carts.book_id', '=', 'books.book_id')
-                        ->select('carts.cart_id as cart_id', 'books.*', 'carts.quantity')
-                        ->get();
+                ->join('books', 'carts.book_id', '=', 'books.book_id')
+                ->join('authors', 'books.author_id', '=', 'authors.author_id')
+                ->select('carts.cart_id', 'books.*', 'authors.author_name as author_name', 'carts.quantity')
+                ->get();
         return view('cart.index', compact('cartItems'));
     }
 
@@ -40,8 +41,6 @@ class CartController extends Controller
     public function store(Request $request, string $id)
     {
         $bookId = $id;
-
-
         $cartItem = Cart::where('user_id', Auth::id())
                         ->where('book_id', $bookId)
                         ->first();
@@ -55,7 +54,7 @@ class CartController extends Controller
             Cart::create([
                 'user_id' => Auth::id(),
                 'book_id' => $bookId,
-                'quantity' => $request->quantity
+                'quantity' => $request->quantity ?? 1
             ]);
         }
 
@@ -83,15 +82,13 @@ class CartController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $cartItem = Cart::where('user_id', Auth::id())->where('id', $id)->first();
+        $cartItem = Cart::where('user_id', Auth::id())->where('cart_id', $id)->first();
 
         if($cartItem){
             $cartItem->update([
                 'quantity' => $request->quantity
             ]);
-
         }
-
 
         return redirect()->back()->with('success', 'Cart updated successfully!');
 
@@ -102,7 +99,9 @@ class CartController extends Controller
      */
     public function destroy(string $id)
     {
-        Cart::where('user_id', Auth::id())->where('id', $id)->delete();
+        Cart::where('user_id', Auth::id())
+            ->where('cart_id', $id)
+            ->delete();
 
         return redirect()->back()->with('delete', 'Book removed from cart!');
     }

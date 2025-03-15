@@ -13,15 +13,16 @@
                         <div class="flex justify-between items-center border-b py-4">
                             <div>
                                 <p class="text-lg font-semibold">{{ $wishlist->book_title }}</p>
+                                <p class="text-gray-600">{{ $wishlist->author_name }}</p>
                                 <p class="text-gray-600">${{ $wishlist->book_price }}</p>
                             </div>
 
                             <div class="flex items-center space-x-4">
                                 <!-- Remove from Wishlist Form -->
-                                <form action="{{ route('wishlist.destroy', $wishlist->id) }}" method="POST">
+                                <form id="delete-form-{{ $wishlist->wishlist_id }}" action="{{ route('wishlist.destroy', $wishlist->book_id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Remove</button>
+                                    <button type="button" onclick="confirmDelete({{ $wishlist->wishlist_id }})" class="bg-red-500 text-white px-4 py-2 rounded">Remove</button>
                                 </form>
                             </div>
                         </div>
