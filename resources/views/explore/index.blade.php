@@ -53,6 +53,7 @@
                 <img src="{{ $book->book_cover }}" alt="{{ $book->title }}" class="w-full h-auto mb-4" style="width: 286px; height: 432px;">
                 <div class="text-lg font-semibold">{{ $book->book_title }}</div>
                 <p class="text-sm text-gray-600">{{ $book->author_name }}</p>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2 mb-2">{{ $book->book_category }}</span>
                 <p class="text-sm text-gray-600">${{ $book->book_price }}</p>
                 <div class="mt-4">
                     <button class="bg-[#454545] px-4 py-2 rounded mr-2 text-white">Add to Cart</button>
