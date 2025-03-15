@@ -3,8 +3,8 @@
 @section('content')
 <div class="flex min-h-screen bg-white text-black">
 
-  <!-- Side B L -->
-  <div class="min-h-screen w-64 bg-white shadow-md p-4">
+<!-- Side B L -->
+<div class="min-h-screen w-64 bg-white shadow-md p-4">
         <h2 class="text-xl font-bold">Books</h2>
         <nav class="mt-4">
             <p class="text-sm font-semibold text-gray-600">Discover</p>
@@ -15,7 +15,7 @@
                 </li>
                 <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                     <i class="fas fa-search"></i>
-                   <button onclick="window.location.href='http://localhost/browse'" class="ml-2 text-black bg-transparent border-none">Browse</button>
+                    <button onclick="window.location.href='http://localhost/browse'" class="ml-2 text-black bg-transparent border-none">Browse</button>
                 </li>
                 <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                     <i class="fas fa-shopping-cart"></i>
@@ -50,7 +50,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
             @foreach($books as $book)
             <div class="bg-white shadow-md rounded-lg p-4">
-                <img src="{{ $book->book_cover }}" alt="{{ $book->title }}" class="w-full h-auto mb-4" style="max-width: 286px; max-height: 432px;">
+                <img src="{{ $book->book_cover }}" alt="{{ $book->title }}" class="w-full h-auto mb-4" style="width: 286px; height: 432px;">
                 <div class="text-lg font-semibold">{{ $book->book_title }}</div>
                 <p class="text-sm text-gray-600">{{ $book->author_name }}</p>
                 <p class="text-sm text-gray-600">${{ $book->book_price }}</p>
