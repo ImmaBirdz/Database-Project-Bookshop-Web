@@ -41,8 +41,6 @@ class CartController extends Controller
     public function store(Request $request, string $id)
     {
         $bookId = $id;
-
-
         $cartItem = Cart::where('user_id', Auth::id())
                         ->where('book_id', $bookId)
                         ->first();
@@ -90,9 +88,7 @@ class CartController extends Controller
             $cartItem->update([
                 'quantity' => $request->quantity
             ]);
-
         }
-
 
         return redirect()->back()->with('success', 'Cart updated successfully!');
 
@@ -103,7 +99,9 @@ class CartController extends Controller
      */
     public function destroy(string $id)
     {
-        Cart::where('user_id', Auth::id())->where('cart_id', $id)->delete();
+        Cart::where('user_id', Auth::id())
+            ->where('cart_id', $id)
+            ->delete();
 
         return redirect()->back()->with('delete', 'Book removed from cart!');
     }
