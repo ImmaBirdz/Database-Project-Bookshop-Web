@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Wishlist;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -31,7 +33,15 @@ class BookController extends Controller
                     ->join('publishers', 'books.publisher_id', '=', 'publishers.publisher_id')
                     ->where('books.book_id', $id)
                     ->firstOrFail();
-        return view('book.show', compact('book'));
+
+        // $isInWishlist
+        // SELECT *
+        // FROM wishlists
+        // WHERE book_id = $id AND user_id = Auth::id()
+        $isInWishlist = Wishlist::where('book_id', $id)
+                        ->where('user_id', Auth::id())
+                        ->exists();
+        return view('book.show', compact('book', 'isInWishlist'));
     }
 
     public function create()

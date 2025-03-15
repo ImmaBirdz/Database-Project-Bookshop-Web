@@ -39,18 +39,25 @@ class WishListController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, string $id)
     {
-        $validated = $request->validate([
-            'book_id' => 'required|exists:books,id',
-        ]);
+        $bookId = $id;
+        $wishlistItem = Wishlist::where('user_id', Auth::id())
+                        ->where('book_id', $bookId)
+                        ->first();
+        
+        if($wishlistItem){
+            return redirect()->back()->with('error', 'Book already in wishlist!');
+        }else{
+            Wishlist::create([
+                'user_id' => Auth::id(),
+                'book_id' => $bookId
+            ]);
+        }
 
-        Auth::user()->wishlists()->firstOrCreate([
-            'book_id' => $validated['book_id'],
-        ]);
-
-        return redirect()->route('wishlist.index')->with('status', 'Book added to wishlist!');
+        return redirect()->back()->with('success', 'Book added to wishlist!');
     }
+
 
     /**
      * Display the specified resource.
@@ -82,9 +89,18 @@ class WishListController extends Controller
      */
     public function destroy(string $id)
     {
-        $wishlist = Wishlist::findOrFail($id);
-        $wishlist->delete();
+        Wishlist::where('user_id', Auth::id())
+            ->where('book_id', $id)
+            ->delete();
 
-        return redirect()->route('wishlist.index')->with('status', 'Book removed from wishlist!');
+        // check if the book is in the wishlist after deletion
+        $isInWishlist = Wishlist::where('book_id', $id)
+                        ->where('user_id', Auth::id())
+                        ->exists();
+        if ($isInWishlist) {
+            return redirect()->back()->with('error', 'Book is not remove from wishlist!');
+        } else {
+            return redirect()->back()->with('delete', 'Book removed from wishlist!');
+        }
     }
 }
