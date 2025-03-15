@@ -54,4 +54,8 @@ Route::get('/myorder', function () {
     return view('myorder');
 });
 
+Route::get('/browse', function () {
+    return view('browse');
+});
+
 require __DIR__.'/auth.php';
