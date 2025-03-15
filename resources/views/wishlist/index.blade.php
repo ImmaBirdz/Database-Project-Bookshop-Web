@@ -19,7 +19,7 @@
 
                             <div class="flex items-center space-x-4">
                                 <!-- Remove from Wishlist Form -->
-                                <form id="delete-form-{{ $wishlist->wishlist_id }}" action="{{ route('wishlist.destroy', $wishlist->wishlist_id) }}" method="POST">
+                                <form id="delete-form-{{ $wishlist->wishlist_id }}" action="{{ route('wishlist.destroy', $wishlist->book_id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="button" onclick="confirmDelete({{ $wishlist->wishlist_id }})" class="bg-red-500 text-white px-4 py-2 rounded">Remove</button>
