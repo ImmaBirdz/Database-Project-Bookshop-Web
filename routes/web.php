@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () { // Auth needed
     // Route::resource('book', BookController::class); // Book Routes
 
     Route::resource('wishlist', WishListController::class); // Wishlist Routes
+    Route::post('/wishlist/{id}', [WishlistController::class, 'store'])->name('wishlist.store'); // Route to add item to wishlist
     Route::delete('/wishlist/{id}', [WishlistController::class, 'remove'])->name('wishlist.remove'); // Route to remove item from wishlist
 
 
