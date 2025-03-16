@@ -8,7 +8,11 @@
         </div>
         <h2 class="mt-4">Search Results: {{ $input }}</h2>
         @if($items->isNotEmpty())
-        <!-- show search result with input -->
+        <!-- show number of search result found -->
+        <div class="mt-4">
+            <h2 class="text-ms font-bold">{{ $items->count() }} results found</h2>
+        </div>
+        <!-- show search result -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
                 @foreach($items as $item)
                 <div class="bg-white shadow-md rounded-lg p-4">
