@@ -66,6 +66,7 @@ Route::get('/browse', function () { // Browse Page
 });
 
 Route::get('/browse/{id}', [BrowseController::class, 'show'])->name('browse.show'); // Show the particular book page after searching
+Route::get('/browse/tag/{id}', [BrowseController::class, 'tag'])->name('browse.tag'); // Show the particular category page
 
 Route::get('/mycollection', function () {
     return view('mycollection');
