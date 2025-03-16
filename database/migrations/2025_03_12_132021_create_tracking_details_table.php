@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tracking_details', function (Blueprint $table) {
             $table->string('tracking_number')->unique();
             $table->string('tracking_status');
-            $table->foreignId('order_id')->constrained();
+            $table->foreignId('order_id')->constrained('orders', 'order_id');
             $table->timestamps();
         });
     }
