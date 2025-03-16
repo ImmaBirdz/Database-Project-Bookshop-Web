@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title') {{ 'Explore' }} @endsection
+
 @section('content')
 <div class="flex min-h-screen bg-white text-black">
     <!-- Main Content -->

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title') {{ 'Searching for ' . $input }} @endsection
+
 @section('content')
 <div class="flex-column min-h-screen bg-white text-black">
     <main class="flex-1 p-6">
