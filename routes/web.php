@@ -6,19 +6,27 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\WishListController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ExploreController;
+use App\Http\Controllers\BrowseController;
+use App\Http\Controllers\TagController;
 
-// use App\Http\Controllers\SearchController; 
-//  f search bar
+// Home Page as Explore Page
+Route::get('/', [ExploreController::class, 'index']);
 
-Route::get('/', [ExploreController::class, 'index']); // Home Page as Explore Page
+// Explore Page
+Route::get('/explore', [ExploreController::class, 'index'])->name('explore.index');
 
-Route::get('/explore', [ExploreController::class, 'index'])->name('explore.index'); // Explore Page
-Route::get('/book', [BookController::class, 'index'])->name('book.index'); // Book Page
+// Book Page
+Route::get('/book', [BookController::class, 'index'])->name('book.index');
 Route::get('/book/{id}', [BookController::class, 'show'])->name('book.show'); // Show the particular book Page
 
-// Route::get('/search', [SearchController::class, 'search'])->name('search'); 
-// Search Page
+// Browse Page
+Route::get('/browse', [BrowseController::class, 'index'])->name('browse.index');
+Route::get('/browse/{id}', [BrowseController::class, 'show'])->name('browse.show'); // Show the particular book page after searching
 
+// Tag Page
+Route::get('/tag/{id}', [TagController::class, 'show'])->name('tag.show'); // Show the particular category page
+
+// Wishlist Page : auth check
 Route::get('/wishlist', function () { // Wishlist Page : auth needed
     if(Auth::auth()){
         return view('/wishlist');
@@ -27,6 +35,7 @@ Route::get('/wishlist', function () { // Wishlist Page : auth needed
     }
 });
 
+// Cart Page : auth check
 Route::get('/cart', function () { // Cart Page : auth needed
     if(Auth::auth()){
         return view('/cart');
@@ -36,32 +45,27 @@ Route::get('/cart', function () { // Cart Page : auth needed
 });
 
 Route::middleware('auth')->group(function () { // Auth needed
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Profile Routes
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::get('/edit-profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/edit-profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/edit-profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // Route::resource('explore', ExploreController::class); // Explore Routes
-    
-    // Route::resource('book', BookController::class); // Book Routes
-
-    Route::resource('wishlist', WishListController::class); // Wishlist Routes
+    // Wishlist Routes
+    Route::resource('wishlist', WishListController::class);
     Route::post('/wishlist/{id}', [WishlistController::class, 'store'])->name('wishlist.store'); // Route to add item to wishlist
     Route::delete('/wishlist/{id}', [WishlistController::class, 'remove'])->name('wishlist.remove'); // Route to remove item from wishlist
 
-
-    Route::resource('/cart', CartController::class); // Wishlist Routes
+    // Cart Routes
+    Route::resource('/cart', CartController::class);
     Route::post('/cart/{id}', [CartController::class, 'store'])->name('cart.store'); // Route to add item to cart
     Route::patch('/cart/{id}', [CartController::class, 'update'])->name('cart.update'); // Route to update item in cart
     Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove'); // Route to remove item from cart
 });
 
-
+// not done yet
 Route::get('/myorder', function () {
     return view('myorder');
-});
-
-Route::get('/browse', function () {
-    return view('browse');
 });
 
 Route::get('/mycollection', function () {
