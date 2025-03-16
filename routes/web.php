@@ -6,6 +6,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\WishListController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ExploreController;
+use App\Http\Controllers\BrowseController;
 
 // use App\Http\Controllers\SearchController; 
 //  f search bar
@@ -60,9 +61,11 @@ Route::get('/myorder', function () {
     return view('myorder');
 });
 
-Route::get('/browse', function () {
-    return view('browse');
+Route::get('/browse', function () { // Browse Page
+    return view('browse.index');
 });
+
+Route::get('/browse/{id}', [BrowseController::class, 'show'])->name('browse.show'); // Show the particular book page after searching
 
 Route::get('/mycollection', function () {
     return view('mycollection');
