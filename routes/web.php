@@ -7,11 +7,17 @@ use App\Http\Controllers\WishListController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ExploreController;
 
+// use App\Http\Controllers\SearchController; 
+//  f search bar
+
 Route::get('/', [ExploreController::class, 'index']); // Home Page as Explore Page
 
 Route::get('/explore', [ExploreController::class, 'index'])->name('explore.index'); // Explore Page
 Route::get('/book', [BookController::class, 'index'])->name('book.index'); // Book Page
 Route::get('/book/{id}', [BookController::class, 'show'])->name('book.show'); // Show the particular book Page
+
+// Route::get('/search', [SearchController::class, 'search'])->name('search'); 
+// Search Page
 
 Route::get('/wishlist', function () { // Wishlist Page : auth needed
     if(Auth::auth()){
@@ -47,6 +53,19 @@ Route::middleware('auth')->group(function () { // Auth needed
     Route::post('/cart/{id}', [CartController::class, 'store'])->name('cart.store'); // Route to add item to cart
     Route::patch('/cart/{id}', [CartController::class, 'update'])->name('cart.update'); // Route to update item in cart
     Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove'); // Route to remove item from cart
+});
+
+
+Route::get('/myorder', function () {
+    return view('myorder');
+});
+
+Route::get('/browse', function () {
+    return view('browse');
+});
+
+Route::get('/mycollection', function () {
+    return view('mycollection');
 });
 
 require __DIR__.'/auth.php';
