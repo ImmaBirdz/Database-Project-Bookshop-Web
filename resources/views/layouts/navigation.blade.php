@@ -42,6 +42,7 @@
                             </button>
                         </x-slot>
                         <x-slot name="content">
+                            <!-- change route to profile.index here -->
                             <x-dropdown-link :href="route('profile.edit')">
                                 {{ __('Profile') }}
                             </x-dropdown-link>

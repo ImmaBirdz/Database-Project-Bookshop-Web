@@ -46,9 +46,10 @@ Route::get('/cart', function () { // Cart Page : auth needed
 
 Route::middleware('auth')->group(function () { // Auth needed
     // Profile Routes
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::get('/edit-profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/edit-profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/edit-profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Wishlist Routes
     Route::resource('wishlist', WishListController::class);
