@@ -16,11 +16,26 @@
     </head>
     <body class="font-sans text-gray-900 antialiased">
 
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0" 
-     style="background-image: url('https://cdn.myportfolio.com/a7dcc6d5ac1134b2d40ac6d1c5552304/1f0a0456-b934-4f28-beee-c47de7308667_rw_1920.gif?h=5ecc8b473e70030b5e3d8b8ef826ca1c'); 
+    <!-- Top Right Image -->
+    <div class="absolute top-0 right-5 m-0">
+            <img src="https://images.squarespace-cdn.com/content/v1/652f0dca21259e4fce8eed05/f0913a9e-4ba7-4f28-9282-82f931bcbf7f/SwingingInsta.gif" 
+                alt="Swinging Insta" 
+                class="w-80 h-80">
+        </div>
+
+
+        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0" 
+         style="background-color: rgb(90, 132, 255);">
+
+
+
+
+
+    <!-- <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0" 
+     style="background-image: url('https://media.istockphoto.com/id/1586395999/vector/white-gray-smooth-grainy-gradient-background-website-header-backdrop-noise-texture-effect.jpg?s=612x612&w=0&k=20&c=33LCk78ojHQysDr9RQ83_Zzq7gedr8xukDCQTDrYWvo='); 
             background-size: cover; 
             background-position: center; 
-            background-repeat: no-repeat;">
+            background-repeat: no-repeat;"> -->
 
             <div>
                 <!-- <a href="/">
