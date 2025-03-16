@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id();
-            $table->string('order_id')->unique();
+            $table->id('order_id');
             $table->string('order_date');
             $table->string('order_status');
             $table->foreignId('user_id')->constrained();

@@ -38,10 +38,15 @@
         </nav>
     </div>
 
- <!-- Main Content -->
- <main class="flex-1 p-6">
-        <div class="flex justify-between items-center">
-            <h2 class="text-2xl font-bold">Books</h2>
+<!-- Main Content -->
+<main class="flex-1 p-6">
+        <div class="flex items-center">
+            <a href="{{ route('explore.index') }}" class="text-sm hover:underline">Bookshop Name</a>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <!-- use route('browse.show', $book->book_category) here instead : after browse page is finished -->
+            <a href="{{ route('book.show', $book->book_id) }}" class="text-sm hover:underline">{{ $book->book_category }}</a>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <a href="{{ route('book.show', $book->book_id) }}" class="text-sm hover:underline">{{ $book->book_title }}</a>
             <!-- <div>
                 <button class="bg-[#454545] px-4 py-2 rounded mr-2 text-white hover:bg-[#333333]">My Cart</button>
                 <button class="bg-black px-4 py-2 rounded text-white hover:bg-[#333333]">Log Out</button>
@@ -50,29 +55,27 @@
 
         <!-- Book Container (Centered Image) -->
         <div class="mt-10 flex flex-col items-center relative">
-         <!-- Price Tag -->
-        <div class="absolute top-2 right-44 bg-[#F7F7F7] text-white px-2 py-1 rounded-sm flex items-center space-x-2 text-sm">
-            <form class="bg-white text-black px-2 py-1 rounded-sm font-bold ml-[-3px]">$ {{ $book->book_price }}</form>
-            @if($isInWishlist && Auth::check())
-            <form class="font-bold cursor-pointer text-yellow-400 hover:text-yellow-500 transition duration-300 ease-in-out transform text-3xl"
-                action="{{ route('wishlist.destroy', $book->book_id) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="bg-transparent border-none p-0 m-0 cursor-pointer">
-                    <ion-icon name="star"></ion-icon>
-                </button>
-            </form>
-            @else
-            <form class="font-bold cursor-pointer text-yellow-400 hover:fill-current transition duration-300 ease-in-out transform text-3xl"
-                action="{{ route('wishlist.store', $book->book_id) }}" method="POST">
-                @csrf
-                <button type="submit" class="bg-transparent border-none p-0 m-0 cursor-pointer">
-                    <ion-icon name="star-outline"></ion-icon>
-                </button>
-            </form>
-            @endif
-        </div>
-
+            <!-- Price Tag -->
+            <div class="absolute top-2 right-44 bg-[#F7F7F7] text-white px-2 py-1 rounded-sm flex items-center space-x-2 text-sm">
+                @if($isInWishlist && Auth::check())
+                <form class="font-bold cursor-pointer text-yellow-400 hover:text-yellow-500 transition duration-300 ease-in-out transform text-3xl"
+                    action="{{ route('wishlist.destroy', $book->book_id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="bg-transparent border-none p-0 m-0 cursor-pointer">
+                        <ion-icon name="star"></ion-icon>
+                    </button>
+                </form>
+                @else
+                <form class="font-bold cursor-pointer text-yellow-400 hover:fill-current transition duration-300 ease-in-out transform text-3xl"
+                    action="{{ route('wishlist.store', $book->book_id) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="bg-transparent border-none p-0 m-0 cursor-pointer">
+                        <ion-icon name="star-outline"></ion-icon>
+                    </button>
+                </form>
+                @endif
+            </div>
             <!-- Book Image -->
             <img src="{{ $book->book_cover }}" alt="Book pic" class="w-[350px] h-[524px] rounded-lg ">
         </div>
@@ -84,10 +87,16 @@
                 <h3 class="text-xl font-bold">Title: {{ $book->book_title }}</h3>
                 <p class="text-gray-400">Author: {{ $book->author_name }}</p>
                 <p class="text-gray-500">Publisher: {{ $book->publisher_name }}</p>
+                <span class="text-gray-500">Tag: </span>
+                <!-- use route('browse.show', $book->book_category) here instead : after browse page is finished -->
+                <a href="{{ route('book.show', $book->book_id) }}" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2 mb-2">{{ $book->book_category }}</a>
             </div>
 
             <!-- add to cart & buy now button -->
             <div class="ml-1 flex flex-col space-y-3">
+                <div class="bg-[#F7F7F7] text-white py-1 rounded-sm flex items-center space-x-2 text-sm">
+                    <span class="bg-white text-black px-2 py-1 rounded-sm font-bold ml-[-3px] text-lg">${{ $book->book_price }}</span>
+                </div>
                 <button class="bg-yellow-400 px-6 py-2 text-black font-semibold rounded">BUY NOW</button>
                 <form action="{{ route('cart.store', $book->book_id) }}" method="POST">
                     @csrf
