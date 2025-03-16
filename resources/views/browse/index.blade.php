@@ -4,7 +4,7 @@
 <div class="flex min-h-screen bg-white text-black">
 
     <!-- Main Content -->
-   <main class="flex-1 p-6">
+    <main class="flex-1 p-6">
         <div class="flex justify-between items-center">
             <h2 class="text-2xl font-bold">Browse</h2>
         </div>
@@ -52,6 +52,18 @@
 </div>
 
 <script>
+    // Handle search by pressing enter
+    document.getElementById('search').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            document.getElementById('searchInput').value = document.getElementById('search').value;
+            if (validateSearch()){
+                document.querySelector('form[action="{{ route('browse.show', ['id' => '1']) }}"]').submit();
+            }
+        }
+    });
+
+    // Validate search input
     function validateSearch() {
         var searchInput = document.getElementById('search').value;
         if (searchInput.trim() === '') {
