@@ -7,8 +7,7 @@
         <div class="flex items-center">
             <a href="{{ route('explore.index') }}" class="text-sm hover:underline">Bookshop Name</a>
             <ion-icon name="chevron-forward-outline"></ion-icon>
-            <!-- use route('browse.show', $book->book_category) here instead : after browse page is finished -->
-            <a href="{{ route('book.show', $book->book_id) }}" class="text-sm hover:underline">{{ $book->book_category }}</a>
+            <a href="{{ route('tag.show', $book->book_category) }}" class="text-sm hover:underline">{{ $book->book_category }}</a>
             <ion-icon name="chevron-forward-outline"></ion-icon>
             <a href="{{ route('book.show', $book->book_id) }}" class="text-sm hover:underline">{{ $book->book_title }}</a>
             <!-- <div>
@@ -52,8 +51,7 @@
                 <p class="text-gray-400">Author: {{ $book->author_name }}</p>
                 <p class="text-gray-500">Publisher: {{ $book->publisher_name }}</p>
                 <span class="text-gray-500">Tag: </span>
-                <!-- use route('browse.show', $book->book_category) here instead : after browse page is finished -->
-                <a href="{{ route('book.show', $book->book_id) }}" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2 mb-2">{{ $book->book_category }}</a>
+                <a href="{{ route('browse.show', $book->book_category) }}" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2 mb-2">{{ $book->book_category }}</a>
             </div>
 
             <!-- add to cart & buy now button -->

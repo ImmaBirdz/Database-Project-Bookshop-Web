@@ -7,6 +7,7 @@ use App\Http\Controllers\WishListController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\BrowseController;
+use App\Http\Controllers\TagController;
 
 // Home Page as Explore Page
 Route::get('/', [ExploreController::class, 'index']);
@@ -23,7 +24,7 @@ Route::get('/browse', [BrowseController::class, 'index'])->name('browse.index');
 Route::get('/browse/{id}', [BrowseController::class, 'show'])->name('browse.show'); // Show the particular book page after searching
 
 // Tag Page
-Route::get('/tag/{id}', [BrowseController::class, 'tag'])->name('browse.tag'); // Show the particular category page
+Route::get('/tag/{id}', [TagController::class, 'show'])->name('tag.show'); // Show the particular category page
 
 // Wishlist Page : auth check
 Route::get('/wishlist', function () { // Wishlist Page : auth needed

@@ -12,21 +12,21 @@
         <!-- Categories -->
         <div class="flex flex-col items-center gap-3 mt-4">
             <div class="flex flex-wrap justify-center gap-3">
-                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('browse.tag', ['id' => 'fantasy']) }}'">Fantasy</button>
-                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('browse.tag', ['id' => 'mystery']) }}'">Mystery</button>
-                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('browse.tag', ['id' => 'horror']) }}'">Horror</button>
-                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('browse.tag', ['id' => 'science fiction']) }}'">Science Fiction</button>
-                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('browse.tag', ['id' => 'drama']) }}'">Drama</button>
-                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('browse.tag', ['id' => 'thriller']) }}'">Thriller</button>
-                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('browse.tag', ['id' => 'crime']) }}'">Crime</button>
+                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('tag.show', ['id' => 'fantasy']) }}'">Fantasy</button>
+                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('tag.show', ['id' => 'mystery']) }}'">Mystery</button>
+                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('tag.show', ['id' => 'horror']) }}'">Horror</button>
+                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('tag.show', ['id' => 'science fiction']) }}'">Science Fiction</button>
+                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('tag.show', ['id' => 'drama']) }}'">Drama</button>
+                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('tag.show', ['id' => 'thriller']) }}'">Thriller</button>
+                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('tag.show', ['id' => 'crime']) }}'">Crime</button>
             </div>
             
             <div class="flex justify-center gap-3">
-                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('browse.tag', ['id' => 'fiction']) }}'">Fiction</button>
-                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('browse.tag', ['id' => 'non-fiction']) }}'">Non-Fiction</button>
-                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('browse.tag', ['id' => 'poetry']) }}'">Poetry</button>
-                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('browse.tag', ['id' => 'history']) }}'">History</button>
-                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('browse.tag', ['id' => 'romance']) }}'">Romance</button>
+                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('tag.show', ['id' => 'fiction']) }}'">Fiction</button>
+                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('tag.show', ['id' => 'non-fiction']) }}'">Non-Fiction</button>
+                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('tag.show', ['id' => 'poetry']) }}'">Poetry</button>
+                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('tag.show', ['id' => 'history']) }}'">History</button>
+                <button class="px-6 py-2 bg-gray-200 rounded-full hover:bg-blue-500 hover:text-white transition-transform transform hover:scale-110" onclick="window.location.href='{{ route('tag.show', ['id' => 'romance']) }}'">Romance</button>
             </div>
         </div>
 

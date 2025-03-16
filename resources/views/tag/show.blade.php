@@ -34,8 +34,7 @@
                 @endif
                 </div>
                 <p class="text-sm text-gray-600">{{ $item->author_name }}</p>
-                <!-- use route('browse.show', $item->book_category) here instead : after browse page is finished -->
-                <a href="{{ route('book.show', $item->book_id) }}" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2 mb-2">{{ $item->book_category }}</a>
+                <a href="{{ route('browse.show', $item->book_category) }}" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2 mb-2">{{ $item->book_category }}</a>
                 <p class="text-sm text-gray-600">${{ $item->book_price }}</p>
                 <div class="mt-4 flex items-center ">
                 <form action="{{ route('cart.store', $item->book_id) }}" method="POST">
