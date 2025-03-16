@@ -1,7 +1,7 @@
 <x-guest-layout>
 
     <div>
-        <h1 class="text-3xl font-semibold text-center text-black-500">{{ __('Register') }}</h1>
+        <h1 class="text-2xl font-semibold text-center text-white">{{ __('Register') }}</h1>
     </div>
 
     <form method="POST" action="{{ route('register') }}">
@@ -9,21 +9,21 @@
 
         <!-- Name -->
         <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label for="name" :value="__('Name')" class="text-gray-100"/> 
             <x-text-input id="name" class="block mt-1 w-full  bg-gray-50 focus:bg-gray-200  focus:border-pink-500 focus:ring focus:ring-pink-300" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
         <!-- Email Address -->
         <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
+            <x-input-label for="email" :value="__('Email')" class="text-gray-100"/> 
             <x-text-input id="email" class="block mt-1 w-full  bg-gray-50 focus:bg-gray-200  focus:border-pink-500 focus:ring focus:ring-pink-300" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <x-input-label for="password" :value="__('Password')" class="text-gray-100"/> 
 
             <x-text-input id="password" class="block mt-1 w-full  bg-gray-50 focus:bg-gray-200  focus:border-pink-500 focus:ring focus:ring-pink-300"
                             type="password"
@@ -35,7 +35,7 @@
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+            <x-input-label for="password_confirmation" :value="__('Confirm Password')" class="text-gray-100"/> 
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full  bg-gray-50 focus:bg-gray-200  focus:border-pink-500 focus:ring focus:ring-pink-300"
                             type="password"
@@ -45,7 +45,7 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
-        <a class="underline text-sm text-gray-600 hover:text-pink-500 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+        <a class="underline text-sm text-gray-300 hover:text-pink-500 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
             {{ __('Already registered?') }}
             </a>
 
