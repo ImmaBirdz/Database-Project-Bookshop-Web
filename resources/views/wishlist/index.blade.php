@@ -18,6 +18,13 @@
                             </div>
 
                             <div class="flex items-center space-x-4">
+                                <!-- Add to Cart Form -->
+                                <form action="{{ route('cart.store', $wishlist->book_id) }}" method="POST">
+                                    @csrf
+                                    @method('POST')
+                                    <input type="hidden" name="book_id" value="{{ $wishlist->book_id }}">
+                                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Add to Cart</button>
+                                </form>
                                 <!-- Remove from Wishlist Form -->
                                 <form id="delete-form-{{ $wishlist->wishlist_id }}" action="{{ route('wishlist.destroy', $wishlist->book_id) }}" method="POST">
                                     @csrf
