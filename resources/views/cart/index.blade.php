@@ -20,10 +20,13 @@
                 <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6">
                     @foreach ($cartItems as $cart)
                         <div class="flex justify-between items-center border-b py-4">
-                            <div>
-                                <p class="text-lg font-semibold">{{ $cart->book_title }}</p>
-                                <p class="text-gray-600">{{ $cart->author_name }}</p>
-                                <p class="text-gray-600">${{ $cart->book_price }}</p>
+                            <div class="flex items-center">
+                                <img src="{{ $cart->book_cover }}" alt="{{ $cart->book_title }}" class="w-16 h-24 object-cover mr-4">
+                                <div>
+                                    <p class="text-lg font-semibold">{{ $cart->book_title }}</p>
+                                    <p class="text-gray-600">{{ $cart->author_name }}</p>
+                                    <p class="text-gray-600">${{ $cart->book_price }}</p>
+                                </div>
                             </div>
 
                             <div class="flex items-center space-x-4">

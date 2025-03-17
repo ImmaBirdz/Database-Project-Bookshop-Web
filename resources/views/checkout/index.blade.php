@@ -12,10 +12,13 @@
                     <div class="w-full lg:w-2/3">
                         @foreach ($cartItems as $cart)
                             <div class="flex justify-between items-center border-b py-4">
-                                <div>
-                                    <p class="text-lg font-semibold">{{ $cart->book_title }}</p>
-                                    <p class="text-gray-600">{{ $cart->author_name }}</p>
-                                    <p class="text-gray-600">${{ $cart->book_price }}</p>
+                                <div class="flex items-center space-x-4">
+                                    <img src="{{ $cart->book_cover }}" alt="{{ $cart->book_title }}" class="w-16 h-24 object-cover">
+                                    <div>
+                                        <p class="text-lg font-semibold">{{ $cart->book_title }}</p>
+                                        <p class="text-gray-600">{{ $cart->author_name }}</p>
+                                        <p class="text-gray-600">${{ $cart->book_price }}</p>
+                                    </div>
                                 </div>
                                 <div class="flex items-center space-x-4">
                                     <p class="text-lg font-semibold">Quantity: {{ $cart->quantity }}</p>
