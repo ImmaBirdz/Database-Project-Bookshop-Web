@@ -9,6 +9,7 @@ use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\BrowseController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CollectionController;
 
 // Home Page as Explore Page
 Route::get('/', [ExploreController::class, 'index']);
@@ -50,10 +51,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
     Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout.success'); // Route to show the success page
     Route::post('/checkout/success', [CheckoutController::class, 'store'])->name('checkout.store'); // Route to store the checkout details to order table
-});
 
-Route::get('/mycollection', function () {
-    return view('mycollection');
+    // Collection Routes
+    Route::get('/mycollection', [CollectionController::class, 'index'])->name('collection.index');
 });
 
 require __DIR__.'/auth.php';
