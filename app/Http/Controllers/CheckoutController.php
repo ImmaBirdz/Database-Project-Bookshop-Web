@@ -79,6 +79,11 @@ class CheckoutController extends Controller
         // delete the cart items
         Cart::where('user_id', Auth::id())->delete();
 
-        return redirect()->back()->with('success', 'Order Placed Successfully');
+        return redirect()->route('checkout.success')->with('success', 'Order Placed Successfully');
+    }
+
+    public function success()
+    {
+        return view('checkout.success');
     }
 }
