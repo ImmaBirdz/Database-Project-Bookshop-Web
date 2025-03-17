@@ -69,11 +69,6 @@ Route::middleware('auth')->group(function () { // Auth needed
     Route::post('/checkout/success', [CheckoutController::class, 'store'])->name('checkout.store'); // Route to store the checkout details to order table
 });
 
-// not done yet
-Route::get('/myorder', function () {
-    return view('myorder');
-});
-
 Route::get('/mycollection', function () {
     return view('mycollection');
 });
