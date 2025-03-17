@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit-profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/edit-profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/edit-profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/edit-profile', [ProfileController::class, 'updateProfilePhoto'])->name('profile.updatePhoto');
 
     // Wishlist Routes
     Route::resource('wishlist', WishListController::class);
