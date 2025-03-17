@@ -5,8 +5,6 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Wishlist') }}
         </h2>
-
-        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             @if ($wishlists->isEmpty())
                 <p class="text-gray-600 text-lg">Your wishlist is empty.</p>
             @else
@@ -31,6 +29,5 @@
                     @endforeach
                 </div>
             @endif
-        </div>
     </x-slot>     
 </x-app-layout>
