@@ -22,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::table('wishlists', function (Blueprint $table) {
+            $table->string('wishlist_id')->change();
+        });
     }
 };
