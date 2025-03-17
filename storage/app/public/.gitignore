@@ -1,2 +1,5 @@
 *
 !.gitignore
+!uploads/
+!uploads/profile_photos/
+!uploads/profile_photos/default-profile.jpg
