@@ -33,7 +33,7 @@
         <ul class="space-y-2 mt-2">
             <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                 <i class="fas fa-user"></i>
-                <button onclick="window.location.href='{{ route('profile.index') }}'" class="ml-2 text-black bg-transparent border-none">Profile</button>
+                <button onclick="window.location.href='{{ route('profile.index') }}'" class="ml-2 text-black bg-transparent border-none">Profile | {{ Auth::user()->name }}</button>
             </li>
             <!-- this one is temporary -->
             <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
