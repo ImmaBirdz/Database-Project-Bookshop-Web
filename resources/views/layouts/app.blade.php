@@ -22,11 +22,10 @@
             @include('layouts.sidebar')
 
             <!-- Main Content  -->
-             <!-- the padding is not fix around 1.3-4 must good but still dont know how to adjust -->
-             <!-- Page Heading -->
+            <!-- Page Heading -->
             <main class="flex-1 p-0.5">
                 @isset($header)
-                    <header class="bg-white shadow">
+                    <header class="bg-white shadow h-full">
                         <div class="max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                             {{ $header }}
                         </div>
