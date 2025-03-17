@@ -40,6 +40,13 @@ class ProfileController extends Controller
             $request->user()->email_verified_at = null;
         }
 
+        $request->user()->address = $request->address;
+        $validatedData = $request->validate([
+            'phone_number' => 'required|regex:/^[0-9]{9,10}$/',
+        ]);
+
+        $request->user()->phone_number = $validatedData['phone_number'];
+
         $request->user()->save();
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
