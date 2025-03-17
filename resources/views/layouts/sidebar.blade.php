@@ -35,11 +35,6 @@
                 <i class="fas fa-user"></i>
                 <button onclick="window.location.href='{{ route('profile.index') }}'" class="ml-2 text-black bg-transparent border-none">Profile | {{ Auth::user()->name }}</button>
             </li>
-            <!-- this one is temporary -->
-            <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
-                <i class="fas fa-cog"></i>
-                <button onclick="window.location.href='{{ route('profile.edit') }}'" class="ml-2 text-black bg-transparent border-none">Settings</button>
-            </li>
             <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                 <i class="fas fa-sign-out-alt"></i>
                 <form action="{{ route('logout') }}" method="POST">
