@@ -27,25 +27,8 @@ Route::get('/browse/{id}', [BrowseController::class, 'show'])->name('browse.show
 // Tag Page
 Route::get('/tag/{id}', [TagController::class, 'show'])->name('tag.show'); // Show the particular category page
 
-// Wishlist Page : auth check
-Route::get('/wishlist', function () { // Wishlist Page : auth needed
-    if(Auth::auth()){
-        return view('/wishlist');
-    }else{
-        return redirect('/login');
-    }
-});
-
-// Cart Page : auth check
-Route::get('/cart', function () { // Cart Page : auth needed
-    if(Auth::auth()){
-        return view('/cart');
-    }else{  
-        return redirect('/login');
-    }
-});
-
-Route::middleware('auth')->group(function () { // Auth needed
+// Auth needed routes
+Route::middleware('auth')->group(function () {
     // Profile Routes
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::get('/edit-profile', [ProfileController::class, 'edit'])->name('profile.edit');
