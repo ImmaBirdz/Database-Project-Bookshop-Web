@@ -23,6 +23,7 @@
                     <p class="text-sm font-bold mt-2">{{ $myCollection->book_title }}</p>
                     <p class="text-xs text-gray-600">{{ $myCollection->author_name }}</p>
                     <p class="text-xs text-gray-600">{{ $myCollection->book_category }}</p>
+                    <p class="text-xs text-gray-600">Quantity: {{ $myCollection->quantity }}</p>
                 </button>
                 @endforeach
                 @else
