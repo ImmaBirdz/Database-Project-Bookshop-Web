@@ -6,9 +6,16 @@
             {{ __('Cart') }}
         </h2>
 
+        @if ($cartItems->isEmpty())
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-            @if ($cartItems->isEmpty())
-                <p class="text-gray-600 text-lg">Your cart is empty.</p>
+            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+                <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6">
+                    <p class="flex justify-center text-lg font-semibold">You cannot checkout with empty cart!</p>
+                    <div class="flex justify-center mt-4">
+                        <button onclick="window.location.href='{{ route('explore.index') }}'" class="bg-blue-500 text-white px-4 py-2 rounded">Explore Books</button>
+                    </div>
+                </div>
+            </div>
             @else
                 <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6">
                     @foreach ($cartItems as $cart)
@@ -37,6 +44,10 @@
                             </div>
                         </div>
                     @endforeach
+                </div>
+
+                <div class="flex justify-end mt-6">
+                    <button onclick="window.location.href='{{ route('checkout.index') }}'" class="bg-green-500 text-white px-6 py-3 rounded">Proceed to Checkout</button>
                 </div>
             @endif
         </div>
