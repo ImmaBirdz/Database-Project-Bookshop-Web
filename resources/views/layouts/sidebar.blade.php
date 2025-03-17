@@ -12,19 +12,12 @@
                 <button onclick="window.location.href='{{ route('browse.index') }}'" class="ml-2 text-black bg-transparent border-none">Browse</button>
             </li>
         </ul>
+        @if(Auth::check())
         <p class="text-sm font-semibold text-gray-600 mt-4">Library</p>
         <ul class="space-y-2 mt-2">
             <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                 <i class="fas fa-list"></i>
                 <button onclick="window.location.href='{{ url('/mycollection') }}'" class="ml-2 text-black bg-transparent border-none">Collections</button>
-            </li>
-            <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
-                <i class="fas fa-heart"></i>
-                <button class="ml-2 text-black bg-transparent border-none">Favourite</button>
-            </li>
-            <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
-                <i class="fas fa-smile"></i>
-                <button class="ml-2 text-black bg-transparent border-none">My Book</button>
             </li>
             <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                 <i class="fas fa-smile"></i>
@@ -36,12 +29,11 @@
             </li>
         </ul>
         <!-- My profile -->
-        @if(Auth::check())
         <p class="text-sm font-semibold text-gray-600 mt-4">Setting</p>
         <ul class="space-y-2 mt-2">
             <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                 <i class="fas fa-user"></i>
-                <button onclick="window.location.href='{{ route('profile.index') }}'" class="ml-2 text-black bg-transparent border-none">Profile</button>
+                <button onclick="window.location.href='{{ route('profile.index') }}'" class="ml-2 text-black bg-transparent border-none">Profile | {{ Auth::user()->name }}</button>
             </li>
             <!-- this one is temporary -->
             <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">

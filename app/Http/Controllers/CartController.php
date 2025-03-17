@@ -18,13 +18,24 @@ class CartController extends Controller
         // FROM carts
         // JOIN books ON carts.book_id = books.id
         // WHERE user_id = Auth::id()
-        
         $cartItems = Cart::where('user_id', Auth::id())
                 ->join('books', 'carts.book_id', '=', 'books.book_id')
                 ->join('authors', 'books.author_id', '=', 'authors.author_id')
                 ->select('carts.cart_id', 'books.*', 'authors.author_name as author_name', 'carts.quantity')
                 ->get();
-        return view('cart.index', compact('cartItems'));
+        
+        // $total
+        // SELECT SUM(books.book_price * carts.quantity) as total
+        // FROM carts
+        // JOIN books ON carts.book_id = books.book_id
+        // WHERE user_id = Auth::id()
+        $total = Cart::where('user_id', Auth::id())
+                ->join('books', 'carts.book_id', '=', 'books.book_id')
+                ->selectRaw('SUM(books.book_price * carts.quantity) as total')
+                ->pluck('total')
+                ->first();
+        
+        return view('cart.index', compact('cartItems', 'total'));
     }
 
     /**

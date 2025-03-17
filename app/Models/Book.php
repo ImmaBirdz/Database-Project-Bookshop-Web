@@ -30,4 +30,8 @@ class Book extends Model
     public function carts(){
         return $this->hasMany(Cart::class);
     }
+
+    public function collections(){
+        return $this->hasMany(Collection::class);
+    }
 }

@@ -3,11 +3,13 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\WishListController;
+use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\BrowseController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CollectionController;
 
 // Home Page as Explore Page
 Route::get('/', [ExploreController::class, 'index']);
@@ -26,25 +28,8 @@ Route::get('/browse/{id}', [BrowseController::class, 'show'])->name('browse.show
 // Tag Page
 Route::get('/tag/{id}', [TagController::class, 'show'])->name('tag.show'); // Show the particular category page
 
-// Wishlist Page : auth check
-Route::get('/wishlist', function () { // Wishlist Page : auth needed
-    if(Auth::auth()){
-        return view('/wishlist');
-    }else{
-        return redirect('/login');
-    }
-});
-
-// Cart Page : auth check
-Route::get('/cart', function () { // Cart Page : auth needed
-    if(Auth::auth()){
-        return view('/cart');
-    }else{  
-        return redirect('/login');
-    }
-});
-
-Route::middleware('auth')->group(function () { // Auth needed
+// Auth needed routes
+Route::middleware('auth')->group(function () {
     // Profile Routes
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::get('/edit-profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -61,15 +46,14 @@ Route::middleware('auth')->group(function () { // Auth needed
     Route::post('/cart/{id}', [CartController::class, 'store'])->name('cart.store'); // Route to add item to cart
     Route::patch('/cart/{id}', [CartController::class, 'update'])->name('cart.update'); // Route to update item in cart
     Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove'); // Route to remove item from cart
-});
 
-// not done yet
-Route::get('/myorder', function () {
-    return view('myorder');
-});
+    // Checkout Routes
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+    Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout.success'); // Route to show the success page
+    Route::post('/checkout/success', [CheckoutController::class, 'store'])->name('checkout.store'); // Route to store the checkout details to order table
 
-Route::get('/mycollection', function () {
-    return view('mycollection');
+    // Collection Routes
+    Route::get('/mycollection', [CollectionController::class, 'index'])->name('collection.index');
 });
 
 require __DIR__.'/auth.php';

@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tracking_details', function (Blueprint $table) {
-            $table->string('tracking_number')->unique();
-            $table->string('tracking_status');
-            $table->foreignId('order_id')->constrained('orders', 'order_id');
-            $table->timestamps();
+        Schema::table('orders', function (Blueprint $table) {
+            $table->decimal('total', 8, 2);
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tracking_details');
+        Schema::table('orders', function (Blueprint $table) {
+            $table->dropColumn('total');
+        });
     }
 };
