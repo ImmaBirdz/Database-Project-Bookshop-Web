@@ -8,8 +8,14 @@ class Order extends Model
 {
     protected $primaryKey = 'order_id';
     protected $fillable = [
+        'order_id',
         'user_id',
         'order_date',
-        'order_amount',
+        'order_status',
+        'total',
     ];
+
+    public function orderDetails(){
+        return $this->hasMany(OrderDetail::class);
+    }
 }
