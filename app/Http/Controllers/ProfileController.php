@@ -11,9 +11,11 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    public function index()
+    public function index() : View
     {
-        return view('profile.index');
+        return view('profile.index', [
+            'user' => auth()->user(),
+        ]);
     }
 
     /**
