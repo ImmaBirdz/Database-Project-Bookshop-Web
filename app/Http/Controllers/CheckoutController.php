@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Collection;
 use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
@@ -74,6 +75,27 @@ class CheckoutController extends Controller
             $orderItem->quantity = $cartItem->quantity;
             $orderItem->total_price = $cartItem->book_price * $cartItem->quantity;
             $orderItem->save();
+        }
+
+        // add the book to the collection
+        foreach($cartItems as $cartItem){
+            $existingCollection = Collection::where('user_id', Auth::id())
+                            ->where('book_id', $cartItem->book_id)
+                            ->first();
+
+            if ($existingCollection) {
+            // update the quantity if the book is already in the collection
+            $existingCollection->quantity += $cartItem->quantity;
+            $existingCollection->save();
+            } else {
+            // create a new collection entry if the book is not in the collection
+            $collection = new Collection();
+            $collection->collection_id = 'COL'.rand(1000,9999);
+            $collection->user_id = Auth::id();
+            $collection->book_id = $cartItem->book_id;
+            $collection->quantity = $cartItem->quantity;
+            $collection->save();
+            }
         }
 
         // delete the cart items
