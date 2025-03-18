@@ -34,7 +34,7 @@
 
         <!-- Search Section -->
         <div class="text-center mt-8">
-            <h2 class="text-2xl font-bold">Serching your own adventure</h2>
+            <h2 class="text-2xl font-bold">Searching your own adventure</h2>
             <p class="text-gray-500">just chill guy</p>
 
             <div class="mt-4 flex justify-center">
