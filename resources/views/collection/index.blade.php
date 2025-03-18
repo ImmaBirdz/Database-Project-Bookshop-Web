@@ -30,7 +30,7 @@
                 </div>
                 <p class="text-sm text-gray-600">{{ $myCollection->author_name }}</p>
                 <a href="{{ route('tag.show', $myCollection->book_category) }}" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2 mb-2">{{ $myCollection->book_category }}</a>
-                <p class="text-sm text-gray-600">${{ $myCollection->book_price }}</p>
+                <p class="text-sm text-gray-600">Quantity: {{ $myCollection->quantity }}</p>
             </div>
             @endforeach
         </div>
