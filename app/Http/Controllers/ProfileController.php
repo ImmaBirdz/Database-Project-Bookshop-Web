@@ -62,7 +62,9 @@ class ProfileController extends Controller
 
         if ($request->file('profile_photo')) {
             // Delete old photo if exists
-            if ($user->profile_photo) {
+            // if user's profile photo exists in storage/app/public/uploads/profile_photos then delete it
+            // else if user's profile photo is default-profile.jpg then do nothing
+            if ($user->profile_photo && $user->profile_photo !== 'default-profile.jpg') {
                 Storage::disk('public')->delete($user->profile_photo);
             }
 
@@ -89,8 +91,14 @@ class ProfileController extends Controller
 
         Auth::logout();
 
+        // delete the user's profile photo
+        // if user's profile photo exists in storage/app/public/uploads/profile_photos then delete it
+        // else if user's profile photo is default-profile.jpg then do nothing
+        if ($user->profile_photo && $user->profile_photo !== 'default-profile.jpg') {
+            Storage::disk('public')->delete($user->profile_photo);
+        }
         $user->delete();
-
+        
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
