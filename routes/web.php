@@ -10,6 +10,7 @@ use App\Http\Controllers\BrowseController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CollectionController;
+use App\Http\Controllers\OrderController;
 
 // Home Page as Explore Page
 Route::get('/', [ExploreController::class, 'index']);
@@ -55,6 +56,9 @@ Route::middleware('auth')->group(function () {
 
     // Collection Routes
     Route::get('/mycollection', [CollectionController::class, 'index'])->name('collection.index');
+
+    // Order Routes
+    Route::get('/myorders', [OrderController::class, 'index'])->name('order.index');
 });
 
 require __DIR__.'/auth.php';
