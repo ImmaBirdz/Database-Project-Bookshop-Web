@@ -17,7 +17,11 @@
         <ul class="space-y-2 mt-2">
             <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                 <i class="fas fa-list"></i>
-                <button onclick="window.location.href='{{ url('/mycollection') }}'" class="ml-2 text-black bg-transparent border-none">Collections</button>
+                <button onclick="window.location.href='{{ route('collection.index') }}'" class="ml-2 text-black bg-transparent border-none">Collection</button>
+            </li>
+            <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
+                <i class="fas fa-shopping-bag"></i>
+                <button onclick="window.location.href='{{ route('order.index') }}'" class="ml-2 text-black bg-transparent border-none">My Order</button>
             </li>
             <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                 <i class="fas fa-smile"></i>
