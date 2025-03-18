@@ -29,11 +29,12 @@
             </li>
         </ul>
         <!-- My profile -->
-        <p class="text-sm font-semibold text-gray-600 mt-4">Setting</p>
+        <p class="text-sm font-semibold text-gray-600 mt-4">Profile</p>
         <ul class="space-y-2 mt-2">
-            <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
+            <li class="flex items-center pr-3 pl-5 py-2 rounded-lg hover:bg-gray-100">
                 <i class="fas fa-user"></i>
-                <button onclick="window.location.href='{{ route('profile.index') }}'" class="ml-2 text-black bg-transparent border-none">Profile | {{ Auth::user()->name }}</button>
+                <img src="{{ asset('storage/' . auth()->user()->profile_photo) }}" alt="Profile Photo" class="w-8 h-8 rounded-full mr-2">
+                <button onclick="window.location.href='{{ route('profile.index') }}'" class="ml-2 text-black bg-transparent border-none">My Profile | {{ Auth::user()->name }}</button>
             </li>
             <li class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
                 <i class="fas fa-sign-out-alt"></i>
