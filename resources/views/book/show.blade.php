@@ -61,13 +61,28 @@
                 <div class="bg-[#F7F7F7] text-white py-1 rounded-sm flex items-center space-x-2 text-sm">
                     <span class="bg-white text-black px-2 py-1 rounded-sm font-bold ml-[-3px] text-lg">${{ $book->book_price }}</span>
                 </div>
-                <button class="bg-yellow-400 px-6 py-2 text-black font-semibold rounded">BUY NOW</button>
-                <form action="{{ route('cart.store', $book->book_id) }}" method="POST">
+                <form action="{{ route('checkout.buyNow', $book->book_id) }}" method="GET" class="flex items-center space-x-2">
+                    <input type="hidden" name="quantity" id="buyNowQuantity">
+                    <button type="submit" class="bg-yellow-400 w-full px-6 py-2 text-black font-semibold rounded">BUY NOW</button>
+                </form>
+                <form action="{{ route('cart.store', $book->book_id) }}" method="POST" class="flex items-center space-x-2">
                     @csrf
                     @method('POST')
-                    <input type="number" name="quantity" value="1" min="1" class="border rounded p-2 w-16">
+                    <input type="hidden" name="quantity" id="addToCartQuantity">
+                    <input type="number" name="quantity" value="1" min="1" class="border rounded p-2 w-16" id="quantity">
                     <button type="submit" class="bg-gray-700 px-6 py-2 rounded text-white">ADD TO CART</button>
                 </form>
+
+                <script>
+                    document.getElementById('quantity').value = 1;
+                    document.getElementById('buyNowQuantity').value = 1;
+                    document.getElementById('addToCartQuantity').value = 1;
+
+                    document.getElementById('quantity').addEventListener('change', function() {
+                        document.getElementById('buyNowQuantity').value = this.value;
+                        document.getElementById('addToCartQuantity').value = this.value;
+                    });
+                </script>
             </div>
 
         </div>
