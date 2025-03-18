@@ -1,5 +1,5 @@
 <div class="min-h-screen w-64 bg-white shadow-md p-4 overflow-hidden">
-    <h2 class="text-xl font-bold">Bookshop Name</h2>
+    <h2 class="text-xl font-bold">Cozy Library</h2>
     <nav class="mt-4">
         <p class="text-sm font-semibold text-gray-600">Discover</p>
         <ul class="space-y-2 mt-2">

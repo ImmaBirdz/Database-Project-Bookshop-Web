@@ -14,7 +14,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
             @foreach($books as $book)
             <div class="bg-white shadow-md rounded-lg p-4">
-                <img src="{{ $book->book_cover }}" alt="{{ $book->title }}" class="w-full h-auto mb-4" style="width: 288px; height: 432px; aspect-ratio: 2/3;">
+                <img src="{{ $book->book_cover }}" alt="{{ $book->title }}" class="w-full h-auto mb-4" style="width: 200px; height: 300px; aspect-ratio: 2/3;">
                 <div class="text-lg font-semibold flex items-center justify-between">
                     {{ $book->book_title }}
                     @if(isset($wishlists) && $wishlists->where('book_id', $book->book_id)->exists() && Auth::check())

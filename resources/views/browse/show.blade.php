@@ -18,7 +18,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
                 @foreach($items as $item)
                 <div class="bg-white shadow-md rounded-lg p-4">
-                    <img src="{{ $item->book_cover }}" alt="{{ $item->title }}" class="w-full h-auto mb-4" style="width: 288px; height: 432px; aspect-ratio: 2/3;">
+                    <img src="{{ $item->book_cover }}" alt="{{ $item->title }}" class="w-full h-auto mb-4" style="width: 200px; height: 300px; aspect-ratio: 2/3;">
                     <div class="text-lg font-semibold flex items-center justify-between">
                         {{ $item->book_title }}
                         @if(isset($wishlist) && $wishlist->where('book_id', $item->book_id)->exists() && Auth::check())
@@ -42,7 +42,7 @@
                     </div>
                     <p class="text-sm text-gray-600">{{ $item->author_name }}</p>
                     <!-- use route('browse.show', $item->book_category) here instead : after browse page is finished -->
-                    <a href="{{ route('book.show', $item->book_id) }}" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2 mb-2">{{ $item->book_category }}</a>
+                    <a href="{{ route('book.show', $item->book_id) }}" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-2 mb-2" >{{ $item->book_category }}</a>
                     <p class="text-sm text-gray-600">${{ $item->book_price }}</p>
                     <div class="mt-4 flex items-center ">
                         <form action="{{ route('cart.store', $item->book_id) }}" method="POST">

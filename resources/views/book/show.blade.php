@@ -42,7 +42,7 @@
                 @endif
             </div>
             <!-- Book Image -->
-            <img src="{{ $book->book_cover }}" alt="Book pic" class="w-[350px] h-[524px] rounded-lg ">
+            <img src="{{ $book->book_cover }}" alt="Book pic" class="w-[150px] h-[225px] rounded-lg ">
         </div>
 
         <!-- Book Details & Buttons -->
