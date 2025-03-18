@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Book;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderDetail;
@@ -31,6 +32,71 @@ class CheckoutController extends Controller
                     ->first();
         
         return view('checkout.index', compact('cartItems' , 'user', 'total'));
+    }
+
+    public function buyNow(Request $request, string $id)
+    {
+        // get user
+        $user = Auth::user();
+
+        // get the book
+        $item = Book::where('book_id', $id)->first();
+
+        // get the quantity from the request
+        $item->quantity = $request->quantity;
+
+        // total
+        $total = $item->book_price * $item->quantity;
+
+        return view('checkout.buy-now', compact('item', 'user', 'total'));
+    }
+
+    public function storeBuyNow($id)
+    {
+        // get user
+        $user = Auth::user();
+
+        // get the book
+        $item = Book::where('book_id', $id)->first();
+
+        // store the order
+        $order = new Order();
+        $order->order_id = $tempOrderID  = 'ORD'.rand(1000,9999);
+        $order->user_id = Auth::id();
+        $order->total = $item->book_price;
+        $order->order_date = now();
+        $order->order_status = 'success';
+        $order->save();
+
+        // store the order items
+        $orderItem = new OrderDetail();
+        $orderItem->order_detail_id = 'OD'.rand(1000,9999);
+        $orderItem->order_id = $tempOrderID;
+        $orderItem->book_id = $item->book_id;
+        $orderItem->quantity = 1;
+        $orderItem->total_price = $item->book_price;
+        $orderItem->save();
+
+        // add the book to the collection
+        $existingCollection = Collection::where('user_id', Auth::id())
+                            ->where('book_id', $item->book_id)
+                            ->first();
+
+        if ($existingCollection) {
+            // update the quantity if the book is already in the collection
+            $existingCollection->quantity += 1;
+            $existingCollection->save();
+        } else {
+            // create a new collection entry if the book is not in the collection
+            $collection = new Collection();
+            $collection->collection_id = 'COL'.rand(1000,9999);
+            $collection->user_id = Auth::id();
+            $collection->book_id = $item->book_id;
+            $collection->quantity = 1;
+            $collection->save();
+        }
+
+        return redirect()->route('checkout.success')->with('success', 'Order Placed Successfully');
     }
 
     public function store(Request $request)

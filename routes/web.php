@@ -10,6 +10,7 @@ use App\Http\Controllers\BrowseController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CollectionController;
+use App\Http\Controllers\OrderController;
 
 // Home Page as Explore Page
 Route::get('/', [ExploreController::class, 'index']);
@@ -35,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit-profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/edit-profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/edit-profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/edit-profile', [ProfileController::class, 'updateProfilePhoto'])->name('profile.updatePhoto');
 
     // Wishlist Routes
     Route::resource('wishlist', WishListController::class);
@@ -51,9 +53,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
     Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout.success'); // Route to show the success page
     Route::post('/checkout/success', [CheckoutController::class, 'store'])->name('checkout.store'); // Route to store the checkout details to order table
+    
+    // Buy Now Routes 
+    Route::get('/checkout/buynow/{id}', [CheckoutController::class, 'buyNow'])->name('checkout.buyNow'); // Route to show the buy now page
+    Route::post('/checkout/buynow/{id}', [CheckoutController::class, 'storeBuyNow'])->name('checkout.storeBuyNow'); // Route to store the buynow checkout details to order table
 
     // Collection Routes
     Route::get('/mycollection', [CollectionController::class, 'index'])->name('collection.index');
+
+    // Order Routes
+    Route::get('/myorders', [OrderController::class, 'index'])->name('order.index');
 });
 
 require __DIR__.'/auth.php';

@@ -6,7 +6,16 @@
             {{ __('Wishlist') }}
         </h2>
             @if ($wishlists->isEmpty())
-                <p class="text-gray-600 text-lg">Your wishlist is empty.</p>
+            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+                    <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6">
+                        <p class="flex justify-center text-lg font-semibold">Your wishlist is empty!</p>
+                        <div class="flex justify-center mt-4">
+                            <button onclick="window.location.href='{{ route('explore.index') }}'" class="bg-blue-500 text-white px-4 py-2 rounded">Explore Books</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             @else
                 <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6">
                     @foreach ($wishlists as $wishlist)
