@@ -1,5 +1,12 @@
 <div class="min-h-screen w-64 bg-white shadow-md p-4 overflow-hidden">
+
+<!-- logo -->
+<div class="flex items-center">
+    <img width="35" height="35" src="https://i.ibb.co/GvZGVXN0/Untitled-Artwork.png" alt="logo" class="mr-2"/>
     <h2 class="text-xl font-bold">Cozy Library</h2>
+</div>
+
+
     <nav class="mt-4">
         <p class="text-sm font-semibold text-black">Discover</p>
         <ul class="space-y-2 mt-2">
