@@ -22,6 +22,14 @@ class Book extends Model
     protected $attributes = [
         'book_status' => true,
     ];
+    
+    public function authors(){
+        return $this->belongsTo(Author::class);
+    }
+
+    public function publishers(){
+        return $this->belongsTo(Publisher::class);
+    }
 
     public function wishlists(){
         return $this->hasMany(Wishlist::class);
@@ -33,5 +41,9 @@ class Book extends Model
 
     public function collections(){
         return $this->hasMany(Collection::class);
+    }
+
+    public function orderDetails(){
+        return $this->hasMany(OrderDetail::class);
     }
 }
