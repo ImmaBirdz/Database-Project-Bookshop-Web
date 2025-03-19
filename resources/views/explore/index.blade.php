@@ -3,7 +3,7 @@
 @section('title') {{ 'Explore' }} @endsection
 
 @section('content')
-<div class="flex min-h-screen bg-white text-black">
+<div class="flex min-h-screen bg-gray-100 text-black">
     <!-- Main Content -->
     <main class="flex-1 p-6">
         <div class="flex justify-between items-center">
@@ -13,7 +13,7 @@
             <h3 class="text-xl font-bold mt-6">Books List</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
             @foreach($books as $book)
-            <div class="bg-white shadow-md rounded-lg p-4">
+            <div class="bg-white shadow-lg rounded-lg p-4">
                 <img src="{{ $book->book_cover }}" alt="{{ $book->title }}" class="w-full h-auto mb-4" style="width: 200px; height: 300px; aspect-ratio: 2/3;">
                 <div class="text-lg font-semibold flex items-center justify-between">
                     {{ $book->book_title }}
