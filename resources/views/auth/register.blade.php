@@ -1,8 +1,10 @@
 <x-guest-layout>
 
-    <div>
-        <h1 class="text-2xl font-semibold text-center text-white">{{ __('Register') }}</h1>
+    <div class="text-center">
+        <img width="60" height="60" src="https://i.ibb.co/GvZGVXN0/Untitled-Artwork.png" alt="logo" class="mx-auto mb-2"/>
+        <h1 class="text-2xl font-semibold text-white">{{ __('Register') }}</h1>
     </div>
+
 
     <form method="POST" action="{{ route('register') }}">
         @csrf
