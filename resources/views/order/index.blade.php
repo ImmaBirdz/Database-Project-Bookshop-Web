@@ -10,7 +10,7 @@
             <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
                 <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6">
                     <div class="flex flex-col lg:flex-row">
-                        <div class="w-full lg:w-2/3">
+                        <div class="w-full">
                             <div class="flex flex-col space-y-4">
                                 @foreach($myOrders as $myOrder)
                                     <div x-data="{ open: false }" class="flex flex-col bg-gray-100 p-4 rounded-lg">
