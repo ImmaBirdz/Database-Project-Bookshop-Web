@@ -16,7 +16,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
                 @foreach($items as $item)
                     <div class="bg-white shadow-md rounded-lg p-4">
-                        <img src="{{ $item->book_cover }}" alt="{{ $item->title }}" class="w-full h-auto mb-4" style="width: 288px; height: 432px; aspect-ratio: 2/3;">
+                        <img src="{{ $item->book_cover }}" alt="{{ $item->title }}" class="w-full h-auto mb-4" style="width: 200px; height: 300px; aspect-ratio: 2/3;">
                         
                         <div class="text-lg font-semibold flex items-center justify-between">
                             {{ $item->book_title }}
