@@ -1,3 +1,7 @@
+@section('title')
+    {{ 'Register' }}
+@endsection
+
 <x-guest-layout>
     <div class="text-center">
         <img width="60" height="60" src="https://i.ibb.co/GvZGVXN0/Untitled-Artwork.png" alt="logo" class="mx-auto mb-2" />
