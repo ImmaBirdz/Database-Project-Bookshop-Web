@@ -1,3 +1,7 @@
+@section('title')
+    {{ 'Register' }}
+@endsection
+
 <x-guest-layout>
     <div class="text-center">
         <img width="60" height="60" src="https://i.ibb.co/GvZGVXN0/Untitled-Artwork.png" alt="logo" class="mx-auto mb-2" />
@@ -36,6 +40,21 @@
                 autocomplete="username" 
             />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        </div>
+
+        <!-- Phone Number -->
+        <div class="mt-4">
+            <x-input-label for="phone" :value="__('Phone Number')" class="text-gray-100" />
+            <x-text-input 
+                id="phone_number" 
+                class="block mt-1 w-full font-bold bg-gray-50 focus:bg-yellow-300 focus:border-yellow-400 focus:ring focus:ring-yellow-300" 
+                type="text" 
+                name="phone_number" 
+                :value="old('phone')" 
+                required 
+                autocomplete="phone" 
+            />
+            <x-input-error :messages="$errors->get('phone')" class="mt-2" />
         </div>
 
         <!-- Password -->
