@@ -53,8 +53,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
     Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout.success'); // Route to show the success page
     Route::post('/checkout/success', [CheckoutController::class, 'store'])->name('checkout.store'); // Route to store the checkout details to order table
-    
-    // Buy Now Routes 
+
+    // Buy Now Routes
     Route::get('/checkout/buynow/{id}', [CheckoutController::class, 'buyNow'])->name('checkout.buyNow'); // Route to show the buy now page
     Route::post('/checkout/buynow/{id}', [CheckoutController::class, 'storeBuyNow'])->name('checkout.storeBuyNow'); // Route to store the buynow checkout details to order table
 
@@ -65,4 +65,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/myorders', [OrderController::class, 'index'])->name('order.index');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

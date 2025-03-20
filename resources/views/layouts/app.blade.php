@@ -16,27 +16,27 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
+            <!-- Sidebar -->
+            <div class="flex">
+                @include('layouts.sidebar')
 
-        <!-- Sidebar  -->
-        <div class="flex">
-            @include('layouts.sidebar')
+                <!-- Main Content -->
+                <main class="flex-1 p-0.5">
+                    <!-- Page Heading -->
+                    @isset($header)
+                        <header class="bg-gray shadow h-full">
+                            <div class="max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                                {{ $header }}
+                            </div>
+                        </header>
+                    @endisset
 
-            <!-- Main Content  -->
-            <!-- Page Heading -->
-            <main class="flex-1 p-0.5">
-                @isset($header)
-                    <header class="bg-white shadow h-full">
-                        <div class="max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                            {{ $header }}
-                        </div>
-                    </header>
-                @endisset
-
-            <!-- Page Content -->
-            <main>
-                @yield('content')
-
-            </main>
+                    <!-- Page Content -->
+                    <main>
+                        @yield('content')
+                    </main>
+                </main>
+            </div>
         </div>
     </body>
 </html>
@@ -47,56 +47,54 @@
 
 <!-- SweetAlert2 JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            @if (session('success'))
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success',
-                    text: '{{ session('success') }}',
-                    confirmButtonText: 'OK',
-                    confirmButtonColor: '#3085d6'
-                });
-            @endif
-
-            @if (session('error'))
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: '{{ session('error') }}',
-                    confirmButtonText: 'OK',
-                    confirmButtonColor: '#3085d6'
-                });
-            @endif
-
-            @if (session('delete'))
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Deleted',
-                    text: '{{ session('delete') }}',
-                    confirmButtonText: 'OK',
-                    confirmButtonColor: '#3085d6'
-                });
-            @endif
-        });
-
-
-        function confirmDelete(id) {
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        @if (session('success'))
             Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!',
-                cancelButtonText: 'No, cancel!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Submit the form after the user confirms
-                    document.getElementById('delete-form-' + id).submit();
-                }
+                icon: 'success',
+                title: 'Success',
+                text: '{{ session('success') }}',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#3085d6'
             });
-        }
+        @endif
 
-    </script>
+        @if (session('error'))
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: '{{ session('error') }}',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#3085d6'
+            });
+        @endif
+
+        @if (session('delete'))
+            Swal.fire({
+                icon: 'success',
+                title: 'Deleted',
+                text: '{{ session('delete') }}',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#3085d6'
+            });
+        @endif
+    });
+
+    function confirmDelete(id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Submit the form after the user confirms
+                document.getElementById('delete-form-' + id).submit();
+            }
+        });
+    }
+</script>

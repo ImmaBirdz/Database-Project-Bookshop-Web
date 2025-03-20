@@ -2,7 +2,7 @@
 
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight pb-6">
             {{ __('Checkout') }}
         </h2>
 
@@ -55,16 +55,16 @@
                 </div>
             </div>
         @else
-        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6">
-                    <p class="flex justify-center text-lg font-semibold">You cannot checkout with empty cart!</p>
-                    <div class="flex justify-center mt-4">
-                        <button onclick="window.location.href='{{ route('explore.index') }}'" class="bg-blue-500 text-white px-4 py-2 rounded">Explore Books</button>
+                <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+                    <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6">
+                        <p class="flex justify-center text-lg font-semibold">You cannot checkout with empty cart!</p>
+                        <div class="flex justify-center mt-4">
+                            <button onclick="window.location.href='{{ route('explore.index') }}'" class="bg-blue-500 text-white px-4 py-2 rounded">Explore Books</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         @endif
     </x-slot>
 </x-app-layout>

@@ -1,4 +1,6 @@
-@section('title') {{ 'Checkout Successful' }} @endsection
+@section('title') 
+    {{ 'Checkout Successful' }} 
+@endsection
 
 <x-app-layout>
     <x-slot name="header">
@@ -11,8 +13,12 @@
                 <p class="text-lg font-semibold">Thank you for your purchase!</p>
                 <p class="text-gray-600">Your order has been successfully placed.</p>
                 <div class="flex justify-center mt-4">
-                    <a href="{{ route('order.index') }}" class="bg-blue-500 text-white px-4 py-2 rounded ml-4">View Order</a>
-                    <a href="{{ route('collection.index') }}" class="bg-blue-500 text-white px-4 py-2 rounded ml-4">View Collection</a>
+                    <a href="{{ route('order.index') }}" class="bg-blue-500 text-white px-4 py-2 rounded ml-4">
+                        View Order
+                    </a>
+                    <a href="{{ route('collection.index') }}" class="bg-blue-500 text-white px-4 py-2 rounded ml-4">
+                        View Collection
+                    </a>
                 </div>
             </div>
         </div>
