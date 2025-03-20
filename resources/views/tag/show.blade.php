@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title') {{ $tag . ' Book' }} @endsection
+@section('title') {{ ucfirst($tag) . ' Book' }} @endsection
 
 @section('content')
 <div class="flex-column min-h-screen bg-white text-black">
