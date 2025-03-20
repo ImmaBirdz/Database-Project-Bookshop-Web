@@ -10,7 +10,6 @@
             <h2 class="text-2xl font-bold">Explore</h2>
         </div>
         <div>
-            <h3 class="text-xl font-bold mt-6">Books List</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
                 @foreach($books as $book)
                 <div class="bg-white shadow-lg rounded-lg p-4">
