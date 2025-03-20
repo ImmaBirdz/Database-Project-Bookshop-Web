@@ -65,7 +65,9 @@
                 <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6">
                     <p class="flex justify-center text-lg font-semibold">No order found!</p>
                     <div class="flex justify-center mt-4">
-                        <button onclick="window.location.href='{{ route('explore.index') }}'" class="bg-blue-500 text-white px-4 py-2 rounded">Explore Books</button>
+                        <button onclick="window.location.href='{{ route('explore.index') }}'" class="bg-blue-500 text-white px-4 py-2 rounded">
+                            Explore Books
+                        </button>
                     </div>
                 </div>
             </div>
