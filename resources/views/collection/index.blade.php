@@ -3,8 +3,8 @@
 @section('title') {{ 'My Collection' }} @endsection
 
 @section('content')
-<div class="flex min-h-screen bg-white text-black">
     <main class="flex-1 p-6">
+<div class="flex min-h-screen bg-gray text-black">
         <div class="flex justify-between items-center">
             <h2 class="text-2xl font-bold">My Collection</h2>
         </div>

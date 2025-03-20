@@ -3,7 +3,7 @@
 @section('title') {{ 'Searching for ' . $input }} @endsection
 
 @section('content')
-<div class="flex-column min-h-screen bg-white text-black">
+<div class="flex-column min-h-screen bg-gray text-black">
     <main class="flex-1 p-6">
         <div class="flex justify-between items-center">
             <h2 class="text-2xl font-bold">Browse</h2>
