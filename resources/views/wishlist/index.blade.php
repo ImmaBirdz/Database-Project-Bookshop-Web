@@ -2,12 +2,11 @@
 
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight pb-6">
             {{ __('Wishlist') }}
         </h2>
             @if ($wishlists->isEmpty())
-            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
                     <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6">
                         <p class="flex justify-center text-lg font-semibold">Your wishlist is empty!</p>
                         <div class="flex justify-center mt-4">
@@ -15,7 +14,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
             @else
                 <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6">
                     @foreach ($wishlists as $wishlist)
