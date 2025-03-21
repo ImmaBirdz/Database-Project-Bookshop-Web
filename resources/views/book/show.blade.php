@@ -9,7 +9,7 @@
     <!-- Main Content -->
     <main class="flex-1 p-6">
         <div class="flex items-center">
-            <a href="{{ route('explore.index') }}" class="text-sm hover:underline">Bookshop Name</a>
+            <a href="{{ route('explore.index') }}" class="text-sm hover:underline">Cozy Library</a>
             <ion-icon name="chevron-forward-outline"></ion-icon>
             <a href="{{ route('tag.show', $book->book_category) }}" class="text-sm hover:underline">{{ $book->book_category }}</a>
             <ion-icon name="chevron-forward-outline"></ion-icon>
